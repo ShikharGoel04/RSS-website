@@ -2,7 +2,7 @@ $(document).ready(function()
 {
     var i = 0;
     console.log("hi");
-    $(".btn").click(function()
+    $(".news").click(function()
     {
         console.log("hi");
         if(i===0)
@@ -34,7 +34,7 @@ $(document).ready(function()
 
 var i = 0;
     // console.log("hi");
-    $(".btn-mag").click(function()
+    $(".mag").click(function()
     {
         console.log("hi");
         if(i===0)

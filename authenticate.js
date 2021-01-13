@@ -89,7 +89,7 @@ hideButton();
 	}
 
 	function otp()
-{
+	{
     var otp1=document.getElementById("otp1");
     var phone=document.getElementById("phone");
 	//e.preventDefault();
