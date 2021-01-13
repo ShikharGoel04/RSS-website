@@ -56,6 +56,38 @@ hideButton();
 		
 	}
 
+	function magazine()
+	{
+		var access_token=localStorage.getItem("access_token");
+		console.log(access_token);
+		if(access_token)
+		{
+			window.location="magazine.html";
+		}
+		else
+		{
+			alert("Please login first");
+		}
+		
+		
+	}
+
+	function news()
+	{
+		var access_token=localStorage.getItem("access_token");
+		console.log(access_token);
+		if(access_token)
+		{
+			window.location="news.html";
+		}
+		else
+		{
+			alert("Please login first");
+		}
+		
+		
+	}
+
 	function otp()
 {
     var otp1=document.getElementById("otp1");
@@ -75,7 +107,9 @@ hideButton();
 })
  .then((response) => response.json())
  .then((responseJson) => {
-     console.log(responseJson.access_token);
+	console.log(responseJson.access_token);
+	const token=btoa(responseJson.access_token)
+     console.log(token);
 	 window.localStorage.setItem("access_token", responseJson.access_token);
  })
  .catch((error) => {
