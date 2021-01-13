@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
   <script>
     window.onload=function(){
       document.getElementById("button").style.display='none';
@@ -75,30 +79,30 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;
-          </button>
-
-          <h4 class="modal-title">Login</h4>
-        </div>
+          <h4 class="modal-title">Login </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        
       <div class="modal-body">
-        <p>Enter phone number</p>
-          <div class="form-group">
-            <div class="col-xs-6">
-              
-          <input type="text" id="phone" class="form-control" placeholder="enter phone number">
-          </div>
-          <div class="col-xs-6">
-          <input type="text" id="otp1" class="form-control" placeholder="enter OTP">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+           <label class="sr-only" for="exampleInputEmail3">Phone Number</label>
+          <input type="text" id="phone" class="form-control form-control-sm mr-1" placeholder="enter phone number">
+            </div>
+            <div class="form-group col-sm-4">
+              <label class="sr-only" for="exampleInputEmail3">Enter OTP</label>
+          <input type="text" id="otp1" class="form-control form-control-sm mr-1" placeholder="enter OTP">
         </div>
-          <button class="btn" onclick="authenticate()" id="otp">Get otp</button>
-          <div class="col-xs-12"></div>
-          <div class="col-xs-6 mt-5"></div>
-
-          <button type="button" class="btn btn-success mt-5"  id="button" onclick="otp()">Login</button>
+        </div>
+        <div class="form-row">
+          <button type="button" class="btn btn-primary btn-sm ml-1" onclick="authenticate()" id="otp">Get otp</button>
+          <button type="button" class="btn btn-primary btn-sm ml-1" id="button" onclick="otp()">Login</button>
           </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
