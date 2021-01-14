@@ -2,7 +2,7 @@ $(document).ready(function()
 {
     var i = 0;
     console.log("hi");
-    $(".btn").click(function()
+    $(".btnnn").click(function()
     {
         console.log("hi");
         if(i===0)
