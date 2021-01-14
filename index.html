@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Website Example</title>
+  <title>organiser</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="authenticate.js"></script>
@@ -23,7 +23,12 @@
     
     </script>
   <style>
-        .navbar{
+  @media screen and (max-width: 500px) {
+  .resp {
+    width: 100%;
+  }
+  }
+  .navbar{
       background-color: #1A322B !important;
       
     }
@@ -46,7 +51,7 @@
 <body style="padding-right: 0px;">
 
 <div class="jumbotron text-center" style="margin-bottom:0" style="height: 100px;">
-  <img src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png">
+  <img class="resp" src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png">
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -68,9 +73,9 @@
        
     </ul>
   </div>  
-       <ul class="nav navbar-nav topnav-right">
+       <ul class="nav navbar-nav topnav-right" id="collapsibleNavbar">
         <li class="nav-item">
-        <a data-toggle="modal" data-target="#myModal" class="nav-link btn-mag btn" onclick="number()">Login</a>
+        <a data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()">Login</a>
       </li>
     </ul> 
 </nav>
