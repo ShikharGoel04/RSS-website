@@ -10,8 +10,16 @@ function showButton(){
   }
 function authenticate()
 {
+	var phoneno = /^\d{10}$/;
 	var phone=document.getElementById("phone");
 	const ph=phone.value;
+
+	if(!ph.match(phoneno))
+	{
+		alert("Enter valid 10 digit phone number");	
+	}
+	else
+	{
 	console.log(ph);
 	//e.preventDefault();
 	fetch('https://rocky-bayou-35696.herokuapp.com/profile/register',{
@@ -36,11 +44,12 @@ function authenticate()
 });
 showButton();
 hideButton();
-		
+}	
 	}
 
 	function otp()
 	{
+		
 		var otp1=document.getElementById("otp1");
 		var phone=document.getElementById("phone");
 		//e.preventDefault();
@@ -61,8 +70,13 @@ hideButton();
 		console.log(responseJson.access_token);
 		const token=btoa(responseJson.access_token)
 		 console.log(token);
+		 
+		 
+		
+			
 		 window.localStorage.setItem("access_token", responseJson.access_token);
-	 })
+		 
+		})
 	 .catch((error) => {
 		 console.log("reset client error-------",error);
 	});
