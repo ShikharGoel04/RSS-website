@@ -12,7 +12,7 @@ window.onload=function(){
             {
                 console.log(i , data['news'][i] );
                 console.log(data['news'][i]['title']);
-                var disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><img class="border border-secondary" style="margin-bottom:10px;" src=%imgsrc% height="200px" width="300px"></div><div class="col-sm-1"></div><div class="col-sm-8"><h2 class="mt-0 fontt">%title%</h2><h5 class="text-muted">by %author% %date%</h5><p class="content" style="color:#222224;,font-sixe:2rem;">%content%</p></div></div>';
+                var disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><img class="border border-secondary responsive" style="margin-bottom:10px;" src=%imgsrc% height="200px" width="300px"></div><div class="col-sm-1"></div><div class="col-sm-8"><h2 class="mt-0 fontt">%title%</h2><h5 class="text-muted">by %author% %date%</h5><p class="content" style="color:#222224;">%content%</p></div></div>';
                 //var newhtml = html.replace('%id%',data['news'][i]['id']);
                 var newhtml = disp.replace('%title%',data['news'][i]['title']);
                 newhtml = newhtml.replace('%content%',data['news'][i]['content']);
