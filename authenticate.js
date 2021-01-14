@@ -70,10 +70,6 @@ hideButton();
 		console.log(responseJson.access_token);
 		const token=btoa(responseJson.access_token)
 		 console.log(token);
-		 
-		 
-		
-			
 		 window.localStorage.setItem("access_token", responseJson.access_token);
 		 
 		})
@@ -86,7 +82,7 @@ hideButton();
 	
 	
 	
-	function video()
+	function vid()
 	{
 		var access_token=localStorage.getItem("access_token");
 		console.log(access_token);
