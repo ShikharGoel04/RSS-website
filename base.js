@@ -63,16 +63,16 @@ var i = 0;
     
     });
 
-    var url = 'https://secret-mesa-20529.herokuapp.com/magazine/getMagazine?format=json';
+    // var url = 'https://secret-mesa-20529.herokuapp.com/magazine/getMagazine?format=json';
     
-    function reply_quick(cid)
-    {
-        $.getJSON(url, function(data)
-       {
-           console.log(data);
-        document.getElementById('test1').src =data['magazine'][cid]['data'];
-       //  console.log(a);
+    // function reply_quick(cid)
+    // {
+    //     $.getJSON(url, function(data)
+    //    {
+    //        console.log(data);
+    //     document.getElementById('test1').src =data['magazine'][cid]['data'];
+    //    //  console.log(a);
         
-        console.log(cid);
-        });
-    }
+    //     console.log(cid);
+    //     });
+    // }
