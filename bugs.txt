@@ -1,0 +1,18 @@
+homepage display on modal show ---
+
+otp wrong error---
+
+videos display 
+
+magazine view
+
+access_token undefined allowed (redirect to index.html on direct access to video.html)
+
+phone number required  --
+
+homepage designing
+
+
+
+Footer
+

@@ -16,9 +16,10 @@ window.onload=function(){
             {
                 console.log(i , data['videos'][i] );
                 console.log(data['videos'][i]['title']);
-                var disp='<div class="mb-5 container1"><iframe id="ytplayer" class="responsive-iframe" type="text/html" width="640" height="360"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com"frameborder="0"></iframe></div>';
+                var disp='<div class="mb-5 container1"><div class="col-sm-3"><iframe id="ytplayer" class="responsive-iframe" type="text/html" width="640" height="360"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com"frameborder="0"></iframe></div><div class="col-sm-1"></div><div class="col-sm-8"><h2 class="mt-0 fontt">%title%</h2></div></div>';
                 //var newhtml = html.replace('%id%',data['news'][i]['id']);
                 var newhtml = disp.replace('%videoid%',data['videos'][i]['videoId']);
+                newhtml = newhtml.replace('%title%',data['videos'][i]['title']);
                 document.querySelector('.news-add').insertAdjacentHTML('beforeend' , newhtml);
                 setTimeout(3000);
             }
