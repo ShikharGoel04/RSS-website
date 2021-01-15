@@ -159,6 +159,8 @@ hideButton();
 	function logout()
 	{
 		 localStorage.clear();
+		
+		 window.location="index.html";
 		 loginShow();
 		//  window.localStorage.setItem("loginShow","true");
 		 
