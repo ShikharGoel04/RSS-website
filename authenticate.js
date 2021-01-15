@@ -52,6 +52,7 @@ hideButton();
 		
 		var otp1=document.getElementById("otp1");
 		var phone=document.getElementById("phone");
+		var status;
 		//e.preventDefault();
 		fetch('https://rocky-bayou-35696.herokuapp.com/profile/login',{
 			method: 'POST',
@@ -65,16 +66,22 @@ hideButton();
 	  }),
 	   credentials: "same-origin"
 	})
-	 .then((response) => response.json())
+	 .then((response) => {response.json();  status=response.status})
 	 .then((responseJson) => {
 		console.log(responseJson.access_token);
 		const token=btoa(responseJson.access_token)
 		 console.log(token);
+		 
 		 window.localStorage.setItem("access_token", responseJson.access_token);
 		 
 		})
 	 .catch((error) => {
 		 console.log("reset client error-------",error);
+		 if(status==403)
+		 {
+			 alert("enter correct OTP");
+		 }
+
 	});
 	$('#myModal').modal('hide');
 	
