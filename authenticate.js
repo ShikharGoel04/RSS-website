@@ -74,8 +74,9 @@ hideButton();
 		console.log(responseJson.access_token);
 		const token=btoa(responseJson.access_token);
 		 console.log(token);
-		 
-		 window.localStorage.setItem("access_token", responseJson.access_token);
+		 document.getElementById("logout").hidden=false;
+		 document.getElementById("login").style.display='none';
+		 window.localStorage.setItem("access_token", token);
 		 
 		})
 	 .catch((error) => {
@@ -135,5 +136,13 @@ hideButton();
 		}
 		
 		
+	}
+
+	function logout()
+	{
+		 localStorage.clear();
+		 alert("you are successfully logged out");
+		 document.getElementById("login").style.display='block';
+		 document.getElementById("logout").hidden=true;
 	}
 

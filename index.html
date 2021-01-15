@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="authenticate.js"></script>
+  <script src="home.js"></script>
   <script src="number.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
@@ -20,7 +21,9 @@
     window.onload=function(){
       document.getElementById("button").style.display='none';
       document.getElementById("otp1").style.display='none';
+
     }
+    window.onload = newsHome();
     
     </script>
   <style>
@@ -49,7 +52,7 @@
   }
   </style>
 </head>
-<body style="padding-right: 0px;">
+<body style="padding-right: 0px;" onload="newHome">
 
 <div class="jumbotron text-center" style="margin-bottom:0" style="height: 100px;">
   <img class="resp" src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png">
@@ -76,7 +79,8 @@
   </div>  
        <ul class="nav navbar-nav topnav-right" id="collapsibleNavbar">
         <li class="nav-item">
-        <a data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()" style="margin-right: 10px;margin-left: 15px;">Login</a>
+        <a id="login" data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()" style="margin-right: 10px;margin-left: 15px;">Login</a>
+        <button type="button" class="btn btn-primary btn-sm ml-1" id="logout" hidden="true" onclick="logout()">Logout</button>
       </li>
     </ul> 
 </nav>
@@ -114,17 +118,17 @@
 </div>
 </div>
 
-<!--image slider start-->
-<div class="slider">
-  <div class="slides">
+<!-- image slider start-->
+<!-- <div class="slider">
+  <div class="slides"> -->
     <!--radio buttons start-->
-    <input type="radio" name="radio-btn" id="radio1">
+    <!-- <input type="radio" name="radio-btn" id="radio1">
     <input type="radio" name="radio-btn" id="radio2">
     <input type="radio" name="radio-btn" id="radio3">
-    <input type="radio" name="radio-btn" id="radio4">
+    <input type="radio" name="radio-btn" id="radio4"> -->
     <!--radio buttons end-->
     <!--slide images start-->
-    <div class="slide first">
+    <!-- <div class="slide first">
       <img src="images/1.jpg" alt="">
     </div>
     <div class="slide">
@@ -135,28 +139,39 @@
     </div>
     <div class="slide">
       <img src="images/4.jpg" alt="">
-    </div>
+    </div> -->
     <!--slide images end-->
     <!--automatic navigation start-->
-    <div class="navigation-auto">
+    <!-- <div class="navigation-auto">
       <div class="auto-btn1"></div>
       <div class="auto-btn2"></div>
       <div class="auto-btn3"></div>
       <div class="auto-btn4"></div>
-    </div>
+    </div> -->
     <!--automatic navigation end-->
   </div>
   <!--manual navigation start-->
-  <div class="navigation-manual">
+  <!-- <div class="navigation-manual">
     <label for="radio1" class="manual-btn"></label>
     <label for="radio2" class="manual-btn"></label>
     <label for="radio3" class="manual-btn"></label>
     <label for="radio4" class="manual-btn"></label>
-  </div>
+  </div> -->
   <!--manual navigation end-->
-</div>
-<!--image slider end-->
+<!-- </div> -->
+<!--image slider end -->
 
+<div class="container" style="margin-top:30px">
+  
+    
+ 
+  <div class="row news-add card">
+    
+   
+  </div>
+ 
+   
+</div>
 <hr>
 <!-- footer -->
 <footer class="footer">
@@ -200,7 +215,7 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
   </div>
 </footer>
 <!-- footer -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var counter = 1;
   setInterval(function(){
     document.getElementById('radio' + counter).checked = true;
@@ -209,6 +224,6 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
       counter = 1;
     }
   }, 5000);
-  </script>
+  </script> -->
 </body>
 </html>
