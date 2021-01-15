@@ -1,8 +1,7 @@
 function showButton(){
 	document.getElementById("button").style.display='block';
 	document.getElementById("otp1").style.display='block';
-
-  }
+}
   
  
   function hideButton(){
@@ -72,16 +71,19 @@ hideButton();
 	 .then((response) => response.json())
 	 .then((responseJson) => {
 		console.log(responseJson.access_token);
+		if(responseJson.access_token)
+		{
 		const token=btoa(responseJson.access_token);
 		 console.log(token);
 		 document.getElementById("logout").hidden=false;
 		 document.getElementById("login").style.display='none';
 		 window.localStorage.setItem("access_token", token);
+		}
 		 
 		})
 	 .catch((error) => {
 		 console.log("reset client error-------",error);
-		 
+		 alert("Enter correct OTP");
 
 	});
 	$('#myModal').modal('hide');
