@@ -1,18 +1,32 @@
-homepage display on modal show ---
+
 
 otp wrong error---
 
-videos display 
+videos display design
 
 magazine view
 
 access_token undefined allowed (redirect to index.html on direct access to video.html)
 
-phone number required  --
+remove console.log
 
-homepage designing
+remove authentication from news
+
+add logout button in magazineview
+
+add loading 
+
+add login, logout and modal in news
 
 
 
-Footer
+
+
+
+
+
+
+
+
+
 
