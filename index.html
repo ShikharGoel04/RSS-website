@@ -28,8 +28,10 @@
       document.getElementById("button").style.display='none';
       document.getElementById("otp1").style.display='none';
       newsHome();
+      // window.localStorage.setItem("loginShow", "true");
+      loginShow();
 }
-    // window.onload = 
+    
     
     </script>
   <style>
@@ -98,7 +100,7 @@
        <ul class="nav navbar-nav topnav-right" id="collapsibleNavbar">
         <li class="nav-item">
         <a id="login" data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()" style="margin-right: 10px;margin-left: 15px;">Login</a>
-        <button type="button" class="btn btn-primary btn-sm ml-1" id="logout" hidden="true" onclick="logout()">Logout</button>
+        <button type="button" class="btn btn-primary btn-sm ml-1" id="logout"  onclick="logout()">Logout</button>
       </li>
     </ul> 
 </nav>

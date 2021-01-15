@@ -1,3 +1,20 @@
+function loginShow()
+
+{
+	if(localStorage.getItem("access_token") === null)
+    {
+		document.getElementById("login").style.display='block';
+        document.getElementById("logout").style.display='none';
+
+	}
+	else if(localStorage.getItem("access_token"))
+    {
+		document.getElementById("login").style.display='none';
+        document.getElementById("logout").style.display='block';
+    }
+ 
+}
+
 function showButton(){
 	document.getElementById("button").style.display='block';
 	document.getElementById("otp1").style.display='block';
@@ -75,9 +92,9 @@ hideButton();
 		{
 		const token=btoa(responseJson.access_token);
 		 console.log(token);
-		 document.getElementById("logout").hidden=false;
-		 document.getElementById("login").style.display='none';
 		 window.localStorage.setItem("access_token", token);
+		loginShow();
+		 
 		}
 		 
 		})
@@ -139,12 +156,14 @@ hideButton();
 		
 		
 	}
-
 	function logout()
 	{
 		 localStorage.clear();
-		 alert("you are successfully logged out");
-		 document.getElementById("login").style.display='block';
-		 document.getElementById("logout").hidden=true;
+		 loginShow();
+		//  window.localStorage.setItem("loginShow","true");
+		 
 	}
 
+
+
+	
