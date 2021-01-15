@@ -12,6 +12,7 @@ function authenticate()
 {
 	var phoneno = /^\d{10}$/;
 	var phone=document.getElementById("phone");
+	phone.disabled = true; 
 	const ph=phone.value;
 
 	if(!ph.match(phoneno))
@@ -52,6 +53,7 @@ hideButton();
 		
 		var otp1=document.getElementById("otp1");
 		var phone=document.getElementById("phone");
+		
 		var status;
 		//e.preventDefault();
 		fetch('https://rocky-bayou-35696.herokuapp.com/profile/login',{
