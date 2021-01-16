@@ -96,6 +96,11 @@ hideButton();
 		loginShow();
 		 
 		}
+		else
+		{
+			alert("Enter correct OTP");
+		}
+
 		 
 		})
 	 .catch((error) => {
