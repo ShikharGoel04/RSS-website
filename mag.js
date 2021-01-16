@@ -1,5 +1,11 @@
 window.onload=function(){
-    $(document).ready(function(){
+    if(localStorage.getItem("access_token") === null)
+    {
+		window.location="index.html";
+
+	}
+	else if(localStorage.getItem("access_token")){
+        $(document).ready(function(){
             var i = 0;
             
             if(i===0)
@@ -28,6 +34,8 @@ window.onload=function(){
     
     });
     }
+    }
+    
 
     var url = 'https://secret-mesa-20529.herokuapp.com/magazine/getMagazine?format=json';
     

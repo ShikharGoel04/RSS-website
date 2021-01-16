@@ -3,17 +3,11 @@ videos display design
 
 magazine view
 
-access_token undefined allowed (redirect to index.html on direct access to video.html)
-
 remove console.log
-
-remove authentication from news
-
-add logout button in magazineview
 
 add loading 
 
-add login, logout and modal in news
+
 
 
 
