@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="news.js"></script>
+  <script src="number.js"></script>
   <script src="authenticate.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -83,13 +84,54 @@
       </li>   
        
     </ul>
-  </div>  
+
+  </div> 
+  <ul class="nav navbar-nav topnav-right" id="collapsibleNavbar">
+    <li class="nav-item">
+    <a id="login" data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()" style="margin-right: 10px;margin-left: 15px;">Login</a>
+    <a id="logout"  class="nav-link btn-mag btn" onclick="logout()" style="margin-right: 10px;margin-left: 15px;">Logout</a>
+  </li>
+</ul>  
        <!-- <ul class="nav navbar-nav topnav-right">
         <li class="nav-item">
         <a data-toggle="modal" data-target="#myModal" class="nav-link btn-mag btn" onclick="number()">Login</a>
       </li>
     </ul>  -->
 </nav>
+
+<div class="modal-content none">
+  <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+<!-- Modal content-->
+<div class="modal-content">
+ <div class="modal-header">
+   <h4 class="modal-title">Login </h4>
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+ 
+<div class="modal-body">
+   <div class="form-row">
+     <div class="form-group col-sm-6">
+    <label class="sr-only" for="exampleInputEmail3">Phone Number</label>
+   <input type="text" id="phone" class="form-control form-control-sm mr-1" placeholder="enter phone number" >
+     </div>
+     <div class="form-group col-sm-4">
+       <label class="sr-only" for="exampleInputEmail3">Enter OTP</label>
+   <input type="text" id="otp1" class="form-control form-control-sm mr-1" placeholder="enter OTP">
+ </div>
+ </div>
+ <div class="form-row">
+   <button type="button" class="btn btn-primary btn-sm ml-1" onclick="authenticate()" id="otp">Get otp</button>
+   <button type="button" class="btn btn-primary btn-sm ml-1" id="button" onclick="otp()">Login</button>
+   </div>
+ <div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
  <!-- <div class="modal-content none">
          <div class="modal fade" id="myModal" role="dialog">
              <div class="modal-dialog">

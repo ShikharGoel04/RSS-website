@@ -1,5 +1,9 @@
 window.onload=function(){
+
     $(document).ready(function(){
+        document.getElementById("button").style.display='none';
+        document.getElementById("otp1").style.display='none';
+        loginShow();
         var i = 0;
         console.log("hi");
         if(i===0)
