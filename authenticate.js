@@ -149,7 +149,14 @@ hideButton();
 	function news()
 	{
 		var access_token=localStorage.getItem("access_token");
-		window.location="news.html";
+		if(access_token)
+		{
+			window.location="news.html";
+		}
+		else
+		{
+			alert("Please login first");
+		}
 	}
 	function logout()
 	{

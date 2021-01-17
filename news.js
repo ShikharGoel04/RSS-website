@@ -1,37 +1,51 @@
 window.onload=function(){
-
-    $(document).ready(function(){
-        document.getElementById("button").style.display='none';
-        document.getElementById("otp1").style.display='none';
-        loginShow();
-        var i = 0;
-        console.log("hi");
-        if(i===0)
+        if(localStorage.getItem("access_token") === null)
         {
-        var url = 'https://secret-mesa-20529.herokuapp.com/news/getNews?format=json';
-        $.getJSON(url, function(data)
+            window.location="index.html";
+    
+        }
+        else if(localStorage.getItem("access_token"))
         {
-            // console.log(data);
-            for(const i in data['news'])
-            {
-                console.log(i , data['news'][i] );
-                console.log(data['news'][i]['title']);
-                var disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><img class="border border-secondary responsive" style="margin-bottom:10px;" src=%imgsrc% height="200px" width="350px"></div><div class="col-sm-1"></div><div class="col-sm-8"><h2 class="mt-0 fontt">%title%</h2><h5 class="text-muted">by %author% %date%</h5><p class="content" style="color:#222224;">%content%</p></div></div>';
-                //var newhtml = html.replace('%id%',data['news'][i]['id']);
-                var newhtml = disp.replace('%title%',data['news'][i]['title']);
-                newhtml = newhtml.replace('%content%',data['news'][i]['content']);
-                newhtml=newhtml.replace('%imgsrc%',data['news'][i]['imageUrl']);
-                console.log(data['news'][i]['imageUrl']);
-                newhtml = newhtml.replace('%date%',data['news'][i]['date']);
-                newhtml = newhtml.replace('%author%',data['news'][i]['author']);
-                document.querySelector('.news-add').insertAdjacentHTML('beforeend' , newhtml);
-                setTimeout(3000);
+            $(document).ready(function(){
+             var bearer = "Bearer " + localStorage.getItem("access_token");
+                fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/news/getNews?format=json',{
+                    method: 'GET',
+                    headers:{
+                        Authorization:bearer
+                    }
+              
+            })
+             .then((response) => response.json())
+             .then((data) => {
+                for(const i in data['news'])
+                {
+                    console.log(i , data['news'][i] );
+                    console.log(data['news'][i]['title']);
+                    var disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><img class="border border-secondary responsive" style="margin-bottom:10px;" src=%imgsrc% height="200px" width="350px"></div><div class="col-sm-1"></div><div class="col-sm-8"><h2 class="mt-0 fontt">%title%</h2><h5 class="text-muted">by %author% %date%</h5><p class="content" style="color:#222224;">%content%</p></div></div>';
+                    //var newhtml = html.replace('%id%',data['news'][i]['id']);
+                    var newhtml = disp.replace('%title%',data['news'][i]['title']);
+                    newhtml = newhtml.replace('%content%',data['news'][i]['content']);
+                    newhtml=newhtml.replace('%imgsrc%',data['news'][i]['image']);
+                    console.log(data['news'][i]['imageUrl']);
+                    newhtml = newhtml.replace('%date%',data['news'][i]['date']);
+                    newhtml = newhtml.replace('%author%',data['news'][i]['author']);
+                    document.querySelector('.news-add').insertAdjacentHTML('beforeend' , newhtml);
+                    setTimeout(3000);
+                }
+                i++;
+                
+                })
+                .catch((error) => {
+                    console.log("reset client error-------",error);
+               });
+            
+            });
             }
-            i++;
-        }); 
+                
+            
+            
+            
         }
     
-    });
-    }
 
     

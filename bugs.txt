@@ -1,5 +1,5 @@
 
-videos display design
+videos display design (limited character passing in description)
 
 magazine view
 
@@ -13,9 +13,8 @@ new homepage
 
 magzine design
 
-change field
+
  
- news page authentication
 
 
 

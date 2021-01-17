@@ -7,11 +7,7 @@ window.onload=function(){
 	else if(localStorage.getItem("access_token"))
     {
 		$(document).ready(function(){
-
-
-
-
-            var bearer ='Bearer '+localStorage.getItem("access_token");
+        var bearer ='Bearer '+localStorage.getItem("access_token");
             console.log(bearer);
             fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/magazine/getMagazine',{
                 method: 'GET',

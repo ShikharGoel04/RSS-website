@@ -4,7 +4,7 @@ function newsHome(){
         console.log("hi");
         if(i===0)
         {
-        var url = 'https://rocky-bayou-35696.herokuapp.com/news/getNews?format=json';
+        var url = 'https://secret-mesa-20529.herokuapp.com/news/getNews?format=json';
         $.getJSON(url, function(data)
         {
             // console.log(data);
@@ -26,7 +26,7 @@ function newsHome(){
             i++;
         }); 
         }
-        document.getElementById("wrapper").style.display='none';
+        // document.getElementById("wrapper").style.display='none';
     
    
     }
