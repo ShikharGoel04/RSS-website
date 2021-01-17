@@ -1,11 +1,13 @@
 window.onload=function(){
+    document.getElementById("loader").style.display='block';
     if(localStorage.getItem("access_token") === null)
     {
 		window.location="index.html";
 
 	}
-	else if(localStorage.getItem("access_token"))
+    else if(localStorage.getItem("access_token"))
     {
+        
 		$(document).ready(function(){
         var bearer ='Bearer '+localStorage.getItem("access_token");
             console.log(bearer);
@@ -40,9 +42,13 @@ window.onload=function(){
            });
         
         });
+        setTimeout(function(){
+            document.getElementById("loader").style.display='none';
+        }, 1500)
+    
         }
             
-        
+
         
         
     }

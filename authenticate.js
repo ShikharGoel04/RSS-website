@@ -40,7 +40,7 @@ function authenticate()
 	{
 	console.log(ph);
 	//e.preventDefault();
-	fetch('https://rocky-bayou-35696.herokuapp.com/profile/register',{
+	fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/profile/register',{
 		method: 'POST',
 		headers:{
 			'Accept':'application/json',
@@ -73,7 +73,7 @@ hideButton();
 		
 		var status;
 		//e.preventDefault();
-		fetch('https://rocky-bayou-35696.herokuapp.com/profile/login',{
+		fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/profile/login',{
 			method: 'POST',
 			headers:{
 				'Accept':'application/json',

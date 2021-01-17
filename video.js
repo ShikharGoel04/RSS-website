@@ -6,6 +6,7 @@
 // }
 
 window.onload=function(){
+    document.getElementById("loader").style.display='block';
     if(localStorage.getItem("access_token") === null)
     {
 		window.location="index.html";
@@ -56,8 +57,12 @@ window.onload=function(){
            });
         
         });
+       
+    
         }
-            
+        setTimeout(function(){
+            document.getElementById("loader").style.display='none';
+        }, 1500)
         
         
         

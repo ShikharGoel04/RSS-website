@@ -1,10 +1,11 @@
+
 function newsHome(){
     
         var i = 0;
         console.log("hi");
         if(i===0)
         {
-        var url = 'https://secret-mesa-20529.herokuapp.com/news/getNews?format=json';
+        var url = 'https://cors-anywhere.herokuapp.com/https://secret-mesa-20529.herokuapp.com/news/getNews?format=json';
         $.getJSON(url, function(data)
         {
             // console.log(data);
@@ -25,8 +26,12 @@ function newsHome(){
             }
             i++;
         }); 
+
         }
-        // document.getElementById("wrapper").style.display='none';
+                setTimeout(function(){
+            document.getElementById("loader").style.display='none';
+        }, 1500)
+    
     
    
     }
