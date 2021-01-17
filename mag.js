@@ -26,7 +26,7 @@ window.onload=function(){
             for(const i in data['magazine'])
             {
                 // console.log(i , data['magazine'][i] );
-                var html = '<div class="column"><h6 style="text-align: center;">%title%</h6><a  id = %id% onclick="reply_quick(this.id)" href="magazineview.html"><img src="%image%" alt="organiser" style="width:100%"></a><p style="text-align: center;" >%date%</p><h4 style="text-align: center;">%author%</h4></div>';
+                var html = '<div class="col-sm-4"><h4 class="hfont" style="text-align: center;">%title%</h4><a  id = %id% onclick="reply_quick(this.id)" href="magazineview.html"><img src="%image%" alt="organiser" style="width:100%"></a><p style="text-align: center;"class="datefont" >%date%</p><h4 class="dfont" style="text-align: center;">%author%</h4></div>';
                 var newhtml = html.replace('%id%',data['magazine'][i]['id']);
                 newhtml = newhtml.replace('%title%',data['magazine'][i]['title']);
                 newhtml = newhtml.replace('%image%',data['magazine'][i]['image']);
