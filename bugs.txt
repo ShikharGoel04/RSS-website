@@ -7,6 +7,15 @@ remove console.log
 
 add loading 
 
+api change
+
+new homepage
+
+magzine design
+
+change field
+ 
+ news page authentication
 
 
 

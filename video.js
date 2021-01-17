@@ -12,7 +12,7 @@ window.onload=function(){
 
 
             var bearer = 'Bearer ' + localStorage.getItem("access_token");
-            fetch('https://secret-mesa-20529.herokuapp.com/videos/getVideos',{
+            fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/videos/getVideos',{
                 method: 'GET',
                 headers:{
                     Authorization:bearer
