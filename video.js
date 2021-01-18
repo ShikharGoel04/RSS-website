@@ -16,7 +16,8 @@ window.onload=function(){
     {
 		$(document).ready(function(){
          var bearer = "Bearer " + localStorage.getItem("access_token");
-            fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/videos/getVideos',{
+         var b=baseUrl();
+            fetch(b+'videos/getVideos',{
                 method: 'GET',
                 headers:{
                     Authorization:bearer

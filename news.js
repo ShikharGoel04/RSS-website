@@ -1,3 +1,4 @@
+var b=baseUrl();
 window.onload=function(){
     document.getElementById("loader").style.display='block';
         if(localStorage.getItem("access_token") === null)
@@ -9,7 +10,7 @@ window.onload=function(){
         {
             $(document).ready(function(){
              var bearer = "Bearer " + localStorage.getItem("access_token");
-                fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/news/getNews?format=json',{
+                fetch(b+'news/getNews?format=json',{
                     method: 'GET',
                     headers:{
                         Authorization:bearer

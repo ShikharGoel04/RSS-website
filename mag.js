@@ -1,3 +1,4 @@
+var b=baseUrl();
 window.onload=function(){
     document.getElementById("loader").style.display='block';
     if(localStorage.getItem("access_token") === null)
@@ -11,7 +12,7 @@ window.onload=function(){
 		$(document).ready(function(){
         var bearer ='Bearer '+localStorage.getItem("access_token");
             console.log(bearer);
-            fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/magazine/getMagazine',{
+            fetch(b+'magazine/getMagazine',{
                 method: 'GET',
                 contentType: 'application/json',
                 headers: {
@@ -54,8 +55,8 @@ window.onload=function(){
     }
 
     
-
-    var url = 'https://rocky-bayou-35696.herokuapp.com/magazine/getMagazine?format=json';
+    
+    var url = b+'magazine/getMagazine?format=json';
     
     function reply_quick(cid)
     {

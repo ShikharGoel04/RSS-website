@@ -26,6 +26,10 @@ function showButton(){
   }
 function authenticate()
 {
+	       
+		var b=baseUrl();
+		console.log(b);
+ 
 	var phoneno = /^\d{10}$/;
 	var phone=document.getElementById("phone");
 	phone.disabled = true; 
@@ -40,7 +44,7 @@ function authenticate()
 	{
 	console.log(ph);
 	//e.preventDefault();
-	fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/profile/register',{
+	fetch(b+'profile/register',{
 		method: 'POST',
 		headers:{
 			'Accept':'application/json',
@@ -67,13 +71,14 @@ hideButton();
 
 	function otp()
 	{
+		var b=baseUrl();
 		
 		var otp1=document.getElementById("otp1");
 		var phone=document.getElementById("phone");
 		
 		var status;
 		//e.preventDefault();
-		fetch('https://cors-anywhere.herokuapp.com/https://rocky-bayou-35696.herokuapp.com/profile/login',{
+		fetch(b+'profile/login',{
 			method: 'POST',
 			headers:{
 				'Accept':'application/json',

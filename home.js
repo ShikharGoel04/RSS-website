@@ -1,6 +1,7 @@
 
 function newsHome(){
     
+      
         var i = 0;
         console.log("hi");
         if(i===0)
