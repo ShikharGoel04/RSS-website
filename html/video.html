@@ -4,11 +4,10 @@
   <title>organiser</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="news.js"></script>
-  <script src="number.js"></script>
-  <script src="baseUrl.js"></script>
-  <script src="authenticate.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="../js/authenticate.js"></script>
+  <script src="../js/video.js"></script>
+  <script src="../js/baseUrl.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -21,14 +20,11 @@
 <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/loader.css">
+<link rel="stylesheet" href="../css/loader.css">
   
 
   <style>
-    .responsive {
-  width: 100%;
-}
-@media screen and (max-width: 500px) {
+    @media screen and (max-width: 500px) {
   .resp {
     width: 100%;
   }
@@ -37,29 +33,24 @@
       background-color: #1A322B !important;
       
     }
-   .content{
+    .content{
     font-family: 'Bitter', serif;
     font-size: 1.5rem;
     text-align: justify;
    }
-  .fakeimg {
-    height: 300px;
-    width: 500px;
-    background: #aaa;
+   .fontt{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
   }
-  .fakeimg2 {
-    height: 200px;
-    width: 250px;
-    background: #aaa;
-  }
+    .responsive {
+  width: 100%;
+}
+
   .body
   {
     padding-right: 0px;
   }
-  .fontt{
-    font-family: 'Abril Fatface', cursive;
-    font-size: 3rem;
-  }
+
   </style>
 </head>
 <body style="padding-right: 0px;">
@@ -69,7 +60,7 @@
 </div> -->
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img src="images/org.png"></a>
+  <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img src="../images/org.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -86,21 +77,18 @@
       </li>   
        
     </ul>
-
-  </div> 
+  </div>  
   <ul class="nav navbar-nav topnav-right" id="collapsibleNavbar">
     <li class="nav-item">
-    <!-- <a id="login" data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()" style="margin-right: 10px;margin-left: 15px;">Login</a> -->
     <a id="logout"  class="nav-link btn-mag btn" onclick="logout()" style="margin-right: 10px;margin-left: 15px;">Logout</a>
   </li>
-</ul>  
+</ul> 
        <!-- <ul class="nav navbar-nav topnav-right">
         <li class="nav-item">
         <a data-toggle="modal" data-target="#myModal" class="nav-link btn-mag btn" onclick="number()">Login</a>
       </li>
     </ul>  -->
 </nav>
-
 <!-- loader -->
 
 
@@ -113,39 +101,6 @@ width: 31px;"><span class="loader-inner"></span></span>
 
 <!-- loader -->
 
-<!-- <div class="modal-content none">
-  <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
- Modal content-->
-<!-- <div class="modal-content">
- <div class="modal-header">
-   <h4 class="modal-title">Login </h4>
-   <button type="button" class="close" data-dismiss="modal">&times;</button>
-</div> --> 
- 
-<!-- <div class="modal-body">
-   <div class="form-row">
-     <div class="form-group col-sm-6">
-    <label class="sr-only" for="exampleInputEmail3">Phone Number</label>
-   <input type="text" id="phone" class="form-control form-control-sm mr-1" placeholder="enter phone number" >
-     </div>
-     <div class="form-group col-sm-4">
-       <label class="sr-only" for="exampleInputEmail3">Enter OTP</label>
-   <input type="text" id="otp1" class="form-control form-control-sm mr-1" placeholder="enter OTP">
- </div>
- </div>
- <div class="form-row">
-   <button type="button" class="btn btn-primary btn-sm ml-1" onclick="authenticate()" id="otp">Get otp</button>
-   <button type="button" class="btn btn-primary btn-sm ml-1" id="button" onclick="otp()">Login</button>
-   </div>
- <div class="modal-footer">
-   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
- </div>
-</div>
-</div>
-</div>
-</div>
-</div> -->
  <!-- <div class="modal-content none">
          <div class="modal fade" id="myModal" role="dialog">
              <div class="modal-dialog">
@@ -185,7 +140,7 @@ width: 31px;"><span class="loader-inner"></span></span>
   
     
  
-      <div class="row news-add card">
+      <div class="row vid-add card">
         
        
       </div>
@@ -194,7 +149,7 @@ width: 31px;"><span class="loader-inner"></span></span>
     </div>
   
 
-<hr>
+
 <!-- footer -->
 <footer class="footer">
   <div class="container">
@@ -221,11 +176,11 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
           <div class="col-12 col-sm-4 align-self-center">
               <div class="text-center">
 
-                  <a class="btn btn-social-icon" style="color:#888f96;" href="https://www.facebook.com/eOrganiser/"><i class="fa fa-facebook fa-lg"></i></a> 
+                  <a class="btn btn-social-icon col" href="https://www.facebook.com/eOrganiser/"><i class="fa fa-facebook fa-lg"></i></a> 
                   <hr>
-                  <a class="btn btn-social-icon" style="color:#888f96;" href="https://twitter.com/eOrganiser"><i class="fa fa-twitter fa-lg"></i></a>
+                  <a class="btn btn-social-icon col" href="https://twitter.com/eOrganiser"><i class="fa fa-twitter fa-lg"></i></a>
                   <hr>
-                  <a class="btn btn-social-icon" style="color:#888f96;" href="https://www.youtube.com/c/eOrganiser"><i class="fa fa-youtube fa-lg"></i></a>
+                  <a class="btn btn-social-icon col" href="https://www.youtube.com/c/eOrganiser"><i class="fa fa-youtube fa-lg"></i></a>
               </div>
           </div>
      </div>

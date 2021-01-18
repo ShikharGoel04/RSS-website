@@ -6,7 +6,7 @@ function newsHome(){
         console.log("hi");
         if(i===0)
         {
-        var url = 'https://cors-anywhere.herokuapp.com/https://secret-mesa-20529.herokuapp.com/news/getNews?format=json';
+        var url ='https://secret-mesa-20529.herokuapp.com/news/getNews?format=json';
         $.getJSON(url, function(data)
         {
             // console.log(data);
