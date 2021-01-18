@@ -1,6 +1,7 @@
-var b=baseUrl();
+
 window.onload=function(){
     document.getElementById("loader").style.display='block';
+    var b=baseUrl();
     if(localStorage.getItem("access_token") === null)
     {
 		window.location="index.html";
@@ -55,7 +56,7 @@ window.onload=function(){
     }
 
     
-    
+    var b=baseUrl();
     var url = b+'magazine/getMagazine?format=json';
     
     function reply_quick(cid)

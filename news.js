@@ -1,6 +1,7 @@
-var b=baseUrl();
+
 window.onload=function(){
     document.getElementById("loader").style.display='block';
+    var b=baseUrl();
         if(localStorage.getItem("access_token") === null)
         {
             window.location="index.html";
