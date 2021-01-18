@@ -40,7 +40,7 @@ window.onload=function(){
                         // }
                         // else
                         // {
-                            disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><iframe id="ytplayer" class="responsive-iframe " type="text/html" width="350px" height="250px"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com"frameborder="0"></iframe></div><div class="col-sm-1"></div><div class="col-sm-8"><h4 class="fontt">%title%</h4><p class="content">%description%</p></div></div>'
+                            disp='<div class="row mt-3 mb-5 border-bottom"><div class="col-sm-4"><iframe id="ytplayer" class=" responsive" type="text/html" width="350px" height="250px"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com" modestbranding="1" frameborder="0" allowfullscreen ></iframe></div><div class="col-sm-8"><h5 class="fontt mt-0 mx-2">%title%</h5><p class="content mx-2">%description%</p></div></div>'
                         // }
                         //var newhtml = html.replace('%id%',data['news'][i]['id']);
                         var newhtml = disp.replace('%videoid%',data['videos'][i]['videoId']);
@@ -63,7 +63,7 @@ window.onload=function(){
         }
         setTimeout(function(){
             document.getElementById("loader").style.display='none';
-        }, 1500)
+        }, 2000)
         
         
         
