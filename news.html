@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
   <title>organiser</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../js/news.js"></script>
-  <script src="../js/number.js"></script>
-  <script src="../js/baseUrl.js"></script>
-  <script src="../js/authenticate.js"></script>
-  <script src="../js/newsView.js"></script>
-  <link rel="stylesheet" href="../css/styles.css">
+  <script src="./js/news.js"></script>
+  <script src="./js/number.js"></script>
+  <script src="./js/baseUrl.js"></script>
+  <script src="./js/authenticate.js"></script>
+  <script src="./js/newsView.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -23,8 +22,13 @@
 <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/loader.css">
-  
+<link rel="stylesheet" href="./css/loader.css">
+  <script>
+      window.onload=function(){
+      newsDisp();
+}
+    </script>
+
 
   <style>
     .responsive {
@@ -71,7 +75,7 @@
 </div> -->
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img src="../images/org.png"></a>
+  <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img src="./images/org.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -106,12 +110,12 @@
 <!-- loader -->
 
 
-<!-- <div class="loader-wrapper" id="loader">
+<div class="loader-wrapper" id="loader">
   <span class="loader" style="
 margin-top: 35%;
 margin-left: 50%;    height: 31px;
 width: 31px;"><span class="loader-inner"></span></span>
-</div> -->
+</div>
 
 <!-- loader -->
 
@@ -186,33 +190,14 @@ width: 31px;"><span class="loader-inner"></span></span>
 <div class="container" style="margin-top:30px">
   
     
- <div class="row news-a">
-     <div class="col-12 heading1" id="heading1">
+ 
+      <div class="news-add">
         
-        
+       
       </div>
- </div>
- <div class="row">
-    <div class="col-12 image1">
-            
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 ">
-                
-    </div>
-</div>
-</div>
-
-
-
-
-
      
        
     </div>
-    
-
   
 
 <hr>
