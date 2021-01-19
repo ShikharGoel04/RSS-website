@@ -4,11 +4,10 @@
   <title>organiser</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <script src="../js/baseUrl.js"></script>
-  <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/styles.css">
+  <script src="./js/authenticate.js"></script>
+  <script src="./js/video.js"></script>
+  <script src="./js/baseUrl.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -17,72 +16,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Yusei+Magic&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-  <script src="../js/mag.js"></script>
-  <script src="../js/authenticate.js"></script>
-  <link rel="stylesheet" href="../css/loader.css">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/loader.css">
+  
+
   <style>
+            .responsive {
+  width: 100%;
+}
     @media screen and (max-width: 500px) {
   .resp {
     width: 100%;
-  }}
+  }
+}
     .navbar{
       background-color: #1A322B !important;
       
     }
-    .hfont{
-      font-family: 'Merriweather', serif;
-    }
-    .datefont{
-      font-family: 'Roboto', sans-serif;
-    }
-    .dfont{
-      font-family: 'Yusei Magic', sans-serif;
-    }
-  .fakeimg {
-    height: 300px;
-    width: 500px;
-    background: #aaa;
+    .content{
+    font-family: 'Bitter', serif;
+    font-size: 1.5rem;
+    text-align: justify;
+   }
+   .fontt{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
   }
-  .fakeimg2 {
-    height: 200px;
-    width: 250px;
-    background: #aaa;
-  }
-* {
-  box-sizing: border-box;
+    .responsive {
+  width: 100%;
 }
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row1::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 500px) {
-  .column {
-    width: 100%;
+  .body
+  {
+    padding-right: 0px;
   }
-}
+
   </style>
 </head>
-<body>
+<body style="padding-right: 0px;">
 
 <!-- <div class="jumbotron text-center" style="margin-bottom:0" style="height: 100px;">
   <img class="resp" src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png">
 </div> -->
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img src="../images/org.png"></a>
+  <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img src="./images/org.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -96,7 +77,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link btn" onclick="vid()" ><i class="fas fa-play"></i> VIDEOS</a>
-      </li>  
+      </li>   
        
     </ul>
   </div>  
@@ -105,10 +86,12 @@
     <a id="logout"  class="nav-link btn-mag btn" onclick="logout()" style="margin-right: 10px;margin-left: 15px;">Logout</a>
   </li>
 </ul> 
-
+       <!-- <ul class="nav navbar-nav topnav-right">
+        <li class="nav-item">
+        <a data-toggle="modal" data-target="#myModal" class="nav-link btn-mag btn" onclick="number()">Login</a>
+      </li>
+    </ul>  -->
 </nav>
-</nav>
-
 <!-- loader -->
 
 
@@ -121,47 +104,55 @@ width: 31px;"><span class="loader-inner"></span></span>
 
 <!-- loader -->
 
-<!-- temporary -->
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-2">
- 
-    </div>
-    <br>
-    <div class="col-sm-8" style="padding-left: 5%;" >
-        <div class="row11">
-          <div class="col-sm-4"><h4 class="hfont" style="text-align: center;">Panchjanya 27th December, 2020</h4><a href="pdfview1.html"><img src="../images/mag1.JPG" alt="organiser" style="width:100%;height:250px;"></a><p style="text-align: center;" class="datefont">2020-12-27T09:54:20Z</p><h4 class="dfont" style="text-align: center;">Sudhanshu</h4>
-          </div>  
-          <div class="col-sm-4"><h4 class="hfont" style="text-align: center;">Panchjanya 20th December, 2020</h4><a href="pdfview2.html"><img src="../images/mag2.JPG" alt="organiser" style="width:100%;height:250px;"></a><p style="text-align: center;" class="datefont">2020-12-20T09:53:04Z</p><h4 class="dfont" style="text-align: center;">Sudhanshu</h4>
+ <!-- <div class="modal-content none">
+         <div class="modal fade" id="myModal" role="dialog">
+             <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        
+      <div class="modal-body">
+       
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+           <label class="sr-only" for="exampleInputEmail3">Phone Number</label>
+          <input type="text" id="phone" class="form-control form-control-sm mr-1" placeholder="enter phone number">
+            </div>
+            <div class="form-group col-sm-4">
+              <label class="sr-only" for="exampleInputEmail3">Enter OTP</label>
+          <input type="text" id="otp1" class="form-control form-control-sm mr-1" placeholder="enter OTP">
+        </div>
+        </div>
+        <div class="form-row">
+          <button type="button" class="btn btn-primary btn-sm ml-1" onclick="authenticate()" id="otp">Get otp</button>
+          <button type="button" class="btn btn-primary btn-sm ml-1" id="button" onclick="otp()">Login</button>
           </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+       
+      </div>
     </div>
-  </div>
-</div>
-</div>
+  </div> -->
 
-<!-- temporary -->
 
-<!-- <div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-2">
+<div class="container" style="margin-top:30px">
+  
+    
  
+      <div class="vid-add card">
+        
+       
+      </div>
+     
+       
     </div>
-    <br>
-    <div class="col-sm-8" style="padding-left: 5%;" >
-        <div class="row1">
-            
-
-            
-            
-      
-    </div>
-  </div>
-</div>
-</div> -->
+  
 
 
-<!-- footer -->
-<hr>
 <!-- footer -->
 <footer class="footer">
   <div class="container">
@@ -188,11 +179,11 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
           <div class="col-12 col-sm-4 align-self-center">
               <div class="text-center">
 
-                  <a class="btn btn-social-icon" style="color:#888f96;" href="https://www.facebook.com/eOrganiser/"><i class="fa fa-facebook fa-lg"></i></a> 
+                  <a class="btn btn-social-icon col" href="https://www.facebook.com/eOrganiser/"><i class="fa fa-facebook fa-lg"></i></a> 
                   <hr>
-                  <a class="btn btn-social-icon" style="color:#888f96;"  href="https://twitter.com/eOrganiser"><i class="fa fa-twitter fa-lg"></i></a>
+                  <a class="btn btn-social-icon col" href="https://twitter.com/eOrganiser"><i class="fa fa-twitter fa-lg"></i></a>
                   <hr>
-                  <a class="btn btn-social-icon" style="color:#888f96;" href="https://www.youtube.com/c/eOrganiser"><i class="fa fa-youtube fa-lg"></i></a>
+                  <a class="btn btn-social-icon col" href="https://www.youtube.com/c/eOrganiser"><i class="fa fa-youtube fa-lg"></i></a>
               </div>
           </div>
      </div>
@@ -204,12 +195,10 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
   </div>
 </footer>
 <!-- footer -->
+
 </body>
-<script>
-    $(document).ready(function() {
-	$(".btn2").click(function() {
-		$("#test1").show();
-	});
-});
-</script>
 </html>
+
+
+
+
