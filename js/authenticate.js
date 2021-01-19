@@ -99,6 +99,7 @@ hideButton();
 		//  console.log(token);
 		 window.localStorage.setItem("access_token", responseJson.access_token);
 		loginShow();
+		window.location="index.html";
 		 
 		}
 		else
