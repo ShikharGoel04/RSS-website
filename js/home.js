@@ -1,4 +1,6 @@
-
+function hideLoader() {
+    $('#loading').hide();
+}
 function newsHome(){
     
       
@@ -29,9 +31,7 @@ function newsHome(){
         }); 
 
         }
-                setTimeout(function(){
-            document.getElementById("loader").style.display='none';
-        }, 1500)
+        setTimeout(hideLoader,1500);
     
     
    

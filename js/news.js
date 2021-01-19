@@ -1,6 +1,9 @@
 
+function hideLoader() {
+    $('#loading').hide();
+}
 function newsDisp(){
-    document.getElementById("loader").style.display='block';
+    // document.getElementById("loader").style.display='block';
     var b=baseUrl();
         if(localStorage.getItem("access_token") === null)
         {
@@ -54,9 +57,7 @@ function newsDisp(){
                });
             
             });
-            setTimeout(function(){
-                document.getElementById("loader").style.display='none';
-            }, 3000)
+            setTimeout(hideLoader,1500);
         
             }
                 

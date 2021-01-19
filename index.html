@@ -8,6 +8,7 @@
   <script src="./js/home.js"></script>
   <script src="./js/number.js"></script>
   <script src="./js/baseUrl.js"></script>
+  <link rel="stylesheet" href="./css/newloader.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -29,7 +30,7 @@
     window.onload=function(){
       document.getElementById("button").style.display='none';
       document.getElementById("otp1").style.display='none';
-      document.getElementById("loader").style.display='block';
+      // document.getElementById("loader").style.display='block';
       newsHome();
       // window.localStorage.setItem("loginShow", "true");
       loginShow();
@@ -111,12 +112,15 @@
 <!-- loader -->
 
 
-<div class="loader-wrapper" id="loader">
+<div id="loading">
+
+</div>
+<!-- <div class="loader-wrapper" id="loader">
   <span class="loader" style="
 margin-top: 35%;
 margin-left: 50%;    height: 31px;
 width: 31px;"><span class="loader-inner"></span></span>
-</div>
+</div> -->
 
 <!-- loader -->
 
