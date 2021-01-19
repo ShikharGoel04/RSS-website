@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/loader.css">
-  
+<link rel="stylesheet" href="./css/newloader.css">
 
   <style>
             .responsive {
@@ -93,14 +93,14 @@
     </ul>  -->
 </nav>
 <!-- loader -->
+<div id="loading"></div>
 
-
-<div class="loader-wrapper" id="loader">
+<!-- <div class="loader-wrapper" id="loader">
   <span class="loader" style="
 margin-top: 35%;
 margin-left: 50%;    height: 31px;
 width: 31px;"><span class="loader-inner"></span></span>
-</div>
+</div> -->
 
 <!-- loader -->
 
@@ -195,7 +195,9 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
   </div>
 </footer>
 <!-- footer -->
-
+<script>
+  setTimeout(hideLoader,2500);
+</script>
 </body>
 </html>
 

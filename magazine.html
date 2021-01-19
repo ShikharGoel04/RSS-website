@@ -22,11 +22,20 @@
   <script src="./js/mag.js"></script>
   <script src="./js/authenticate.js"></script>
   <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/newloader.css">
   <style>
     @media screen and (max-width: 500px) {
   .resp {
     width: 100%;
-  }}
+
+  }
+
+  /* .respMag{
+    width:50% !important;
+    margin-left: 30%;
+  } */
+}
+
     .navbar{
       background-color: #1A322B !important;
       
@@ -109,15 +118,16 @@
 </nav>
 </nav>
 
+
 <!-- loader -->
 
-
-<div class="loader-wrapper" id="loader">
+<div id="loading"></div>
+<!-- <div class="loader-wrapper" id="loader">
   <span class="loader" style="
 margin-top: 35%;
 margin-left: 50%;    height: 31px;
 width: 31px;"><span class="loader-inner"></span></span>
-</div>
+</div> -->
 
 <!-- loader -->
 
@@ -211,5 +221,6 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
 		$("#test1").show();
 	});
 });
+setTimeout(hideLoader,2500);
 </script>
 </html>
