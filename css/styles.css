@@ -8,6 +8,11 @@
 .col{
     color:#888f96;
 }
+.footerPosition{
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
 .break
 {
   overflow-wrap: break-word;
