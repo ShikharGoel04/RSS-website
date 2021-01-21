@@ -41,8 +41,19 @@ function authenticate()
 		alert("Enter valid 10 digit phone number");	
 	}
 	else
-	{
-	console.log(ph);
+	{	
+		var p='91';
+		var pho=p.concat(ph);
+		console.log(pho);
+		// p=p+'9';
+		// p=p+'1';
+		// k=0;
+		// for(i=2;i<12;i++)
+		// {
+		// 	p+=ph[k];
+		// 	k++
+		// }
+	// console.log(p);
 	//e.preventDefault();
 	fetch(b+'profile/register',{
 		method: 'POST',
@@ -51,8 +62,8 @@ function authenticate()
 			'Content-Type':'application/json'
 		},
 		body: JSON.stringify({
-    username:ph,
-    phone:ph,
+    username:pho,
+    phone:pho,
   }),
    credentials: "same-origin"
 })
@@ -77,6 +88,9 @@ hideButton();
 		var phone=document.getElementById("phone");
 		
 		var status;
+		var p='91';
+		var pho=p.concat(phone.value);
+		console.log(pho);
 		//e.preventDefault();
 		fetch(b+'profile/login',{
 			method: 'POST',
@@ -85,7 +99,7 @@ hideButton();
 				'Content-Type':'application/json'
 			},
 			body: JSON.stringify({
-		username: phone.value,
+		username: pho,
 		password: otp1.value
 	  }),
 	   credentials: "same-origin"
