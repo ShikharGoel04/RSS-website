@@ -178,6 +178,22 @@ hideButton();
 			alert("Please login first");
 		}
 	}
+
+	function subscription()
+	{
+		var access_token=localStorage.getItem("access_token");
+		console.log(access_token);
+		if(access_token)
+		{
+			window.location="subscription.html";
+		}
+		else
+		{
+			alert("Please login first");
+		}
+		
+		
+	}
 	function logout()
 	{
 		 localStorage.clear();
