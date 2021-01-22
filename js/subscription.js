@@ -38,12 +38,8 @@ window.onload=function(){
                         console.log(phone);
                         console.log(orgSub);
                         // var disp;
-                        // console.log(i , data['user'][i] );
-                        // console.log(data['user'][i]['title']);
-                        // var description=data['user'][i]['description'];
-                        // var trimmedString = description.substring(0, 1000);
-                        // var descLength=description.length;
-                        // // if(descLength>1000)
+
+                        // // if(>1000)
                         // // {
                         // //   disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><iframe id="ytplayer" class="responsive-iframe " type="text/html" width="350px" height="250px"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com"frameborder="0"></iframe></div><div class="col-sm-1"></div><div class="col-sm-8"><h4 class="fontt">%title%</h4><p class="content">%description% . . .<div id=%title% style="display:none;"><p>%desc%</p></div></p></div><a href="javascript:showMore(%title%)" id="link">Read More >></a></div>';
                         // // }

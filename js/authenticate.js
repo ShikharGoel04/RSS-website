@@ -113,6 +113,7 @@ hideButton();
 		//  console.log(token);
 		 window.localStorage.setItem("access_token", responseJson.access_token);
 		loginShow();
+		/* have to fetch profile api here and store it on local storage   */
 		window.location="index.html";
 		 
 		}
