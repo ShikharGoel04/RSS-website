@@ -31,29 +31,60 @@ window.onload=function(){
           
                         var phone=data['user']['phone'];
                         var email=data['user']['email'];
+                        var username=data['user']['username'];
                         var orgSub=data['user']['is_orgSubscribed'];
                         var panSub=data['user']['is_pncSubscribed'];
                         var startDate=data['user']['subscription_start'];
                         var endDate=data['user']['subscription_end'];
+                        var orgStart,orgEnd,panchStart,panchEnd;
                         console.log(phone);
                         console.log(orgSub);
-                        // var disp;
+                        if(orgSub && panSub)
+                        {
+                            orgStart=startDate;
+                            panchStart=startDate;
+                            orgEnd=endDate;
+                            panchEnd=endDate;
+                        }
+                        else if(orgSub && !panSub)
+                        {
+                            orgStart=startDate;
+                            panchStart='--';
+                            orgEnd=endDate;
+                            panchEnd='--';
+                        }
+                        else if(panSub && !orgSub)
+                        {
+                            orgStart='--';
+                            panchStart=startDate;
+                            orgEnd='--';
+                            panchEnd=endDate;
+                        }
+                        else
+                        {
+                            orgStart='--';
+                            panchStart='--';
+                            orgEnd='--';
+                            panchEnd='--';
+                        }
 
-                        // // if(>1000)
-                        // // {
-                        // //   disp='<div class="mb-5 border-bottom mt-3"><div class="col-sm-3"><iframe id="ytplayer" class="responsive-iframe " type="text/html" width="350px" height="250px"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com"frameborder="0"></iframe></div><div class="col-sm-1"></div><div class="col-sm-8"><h4 class="fontt">%title%</h4><p class="content">%description% . . .<div id=%title% style="display:none;"><p>%desc%</p></div></p></div><a href="javascript:showMore(%title%)" id="link">Read More >></a></div>';
-                        // // }
-                        // // else
-                        // // {
-                        //     disp='<div class="row mt-3 mb-5 border-bottom"><div class="col-sm-4"><iframe id="ytplayer" class=" responsive" type="text/html" width="350px" height="250px"src="https://www.youtube.com/embed/%videoid%?autoplay=0&origin=http://example.com" modestbranding="1" frameborder="0" allowfullscreen ></iframe></div><div class="col-sm-8"><h5 class="fontt mt-0 mx-2">%title%</h5><p class="content mx-2">%description%</p></div></div>'
-                        // // }
-                        // //var newhtml = html.replace('%id%',data['news'][i]['id']);
-                        // var newhtml = disp.replace('%videoid%',data['user'][i]['videoId']);
-                        // newhtml = newhtml.replace('%title%',data['user'][i]['title']);
-                        // newhtml = newhtml.replace('%description%',trimmedString);
-                        // // newhtml = newhtml.replace('%desc%',description);
-                        // document.querySelector('.vid-add').insertAdjacentHTML('beforeend' , newhtml);
-                        // setTimeout(3000);
+                        var disp='<div>%username%</div>';
+                        var disp1='<div>%phone%</div>';
+                        var disp2='<div>%email%</div>';
+                        var disp3='  <caption class="subscribe rounded fontt" style="caption-side: top; text-align: center;">              Subscription Details            </caption>          <tr class="firstrow">            <th style="text-align: center;">Subscription type</th>            <th style="text-align: center;">Start Date</th>            <th style="text-align: center;">End Date</th>          </tr>          <tr style="text-align: center;" class="evenrow">            <td>Organiser Ecopy</td>            <td>%orgStart%</td>            <td>%orgEnd%</td>          </tr>          <tr style="text-align: center;" class="oddrow">            <td>Panchjanya Ecopy</td>            <td>%panchStart%</td>            <td>%panchEnd%</td>          </tr>';
+
+                        var newhtml = disp.replace('%username%',data['user']['username']);
+                        var newhtml1 = disp1.replace('%phone%',data['user']['phone']);
+                        var newhtml2 = disp2.replace('%email%',data['user']['email']);
+                       var newhtml3 = disp3.replace('%orgStart%',orgStart);
+                        newhtml3 = newhtml3.replace('%orgEnd%',orgEnd);
+                        newhtml3 = newhtml3.replace('%panchStart%',panchStart);
+                        newhtml3 = newhtml3.replace('%panchEnd%',panchEnd);
+                       
+                        document.querySelector('.user1').insertAdjacentHTML('beforeend' , newhtml);
+                         document.querySelector('.phone1').insertAdjacentHTML('beforeend' , newhtml1);
+                         document.querySelector('.email1').insertAdjacentHTML('beforeend' , newhtml2);
+                         document.querySelector('.table1').insertAdjacentHTML('beforeend' , newhtml3);
                   
             
             })
