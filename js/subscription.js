@@ -41,9 +41,17 @@ window.onload=function(){
                         var email=data['user']['email'];
                         var username=data['user']['username'];
                         var orgSub=data['user']['is_orgSubscribed'];
-                        var startDate=formatDate(data['user']['subscription_start']);
+                        var startDate="--";
+                        if(data['user']['subscription_start']){
+                            startDate=formatDate(data['user']['subscription_start']);
+                        }
+
                         var panSub=data['user']['is_pncSubscribed'];
-                        var endDate=formatDate(data['user']['subscription_end']);
+                        var endDate="--";
+                        if(data['user']['subscription_end'])
+                        {
+                            endDate=formatDate(data['user']['subscription_end']);
+                        }
                         var orgStart,orgEnd,panchStart,panchEnd;
                         console.log(phone);
                         console.log(orgSub);
