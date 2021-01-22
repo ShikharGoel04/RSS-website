@@ -112,9 +112,48 @@ hideButton();
 		// const token=btoa(responseJson.access_token);
 		//  console.log(token);
 		 window.localStorage.setItem("access_token", responseJson.access_token);
+		 document.getElementById("loading").style.display='block';
 		loginShow();
+
+
+
+
+			var bearer = "Bearer " + localStorage.getItem("access_token");
+			var b=baseUrl();
+			   fetch(b+'profile/profile',{
+				   method: 'GET',
+				   headers:{
+					   Authorization:bearer
+				   }
+			 
+		   })
+			.then((response) => response.json())
+			.then((data) => {
+			 
+						   var orgSub=data['user']['is_orgSubscribed'];
+						   var panSub=data['user']['is_pncSubscribed'];
+						   if(orgSub || panSub)
+						   {
+							window.localStorage.setItem("magsub",1);
+							window.location="index.html";
+						   }
+						   else{
+							 window.localStorage.setItem("magsub",0);
+							 window.location="index.html";
+						   }
+
+			   
+			   })
+			   .catch((error) => {
+				   console.log("reset client error-------",error);
+			  });
+
+
+
+
+
 		/* have to fetch profile api here and store it on local storage   */
-		window.location="index.html";
+
 		 
 		}
 		else
@@ -157,7 +196,14 @@ hideButton();
 		console.log(access_token);
 		if(access_token)
 		{
-			window.location="magazine.html";
+			var mag_sub=localStorage.getItem("magsub");
+			if(mag_sub==1){
+				window.location="magazine.html";
+			}
+			else if(mag_sub==0){
+				alert("Please Subscribe!");
+			}
+			
 		}
 		else
 		{

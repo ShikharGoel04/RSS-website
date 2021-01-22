@@ -4,6 +4,14 @@
 //     //shows the #more
 //     document.getElementById(title).style.display = "block";
 // }
+function formatDate (input) {
+    var trimmedString=input.substring(0,10);
+    var datePart = trimmedString.split("-",3),
+    year = datePart[0], // get only two digits
+    month = datePart[1],
+     day = datePart[2];
+    return day+'/'+month+'/'+year;
+  }
 function hideLoader() {
     $('#loading').hide();
 }
@@ -33,9 +41,9 @@ window.onload=function(){
                         var email=data['user']['email'];
                         var username=data['user']['username'];
                         var orgSub=data['user']['is_orgSubscribed'];
+                        var startDate=formatDate(data['user']['subscription_start']);
                         var panSub=data['user']['is_pncSubscribed'];
-                        var startDate=data['user']['subscription_start'];
-                        var endDate=data['user']['subscription_end'];
+                        var endDate=formatDate(data['user']['subscription_end']);
                         var orgStart,orgEnd,panchStart,panchEnd;
                         console.log(phone);
                         console.log(orgSub);
@@ -71,7 +79,7 @@ window.onload=function(){
                         var disp='<div>%username%</div>';
                         var disp1='<div>%phone%</div>';
                         var disp2='<div>%email%</div>';
-                        var disp3='  <caption class="subscribe rounded fontt" style="caption-side: top; text-align: center;">              Subscription Details            </caption>          <tr class="firstrow">            <th style="text-align: center;">Subscription type</th>            <th style="text-align: center;">Start Date</th>            <th style="text-align: center;">End Date</th>          </tr>          <tr style="text-align: center;" class="evenrow">            <td>Organiser Ecopy</td>            <td>%orgStart%</td>            <td>%orgEnd%</td>          </tr>          <tr style="text-align: center;" class="oddrow">            <td>Panchjanya Ecopy</td>            <td>%panchStart%</td>            <td>%panchEnd%</td>          </tr>';
+                        var disp3='  <caption class="subscribe rounded fontt" style="caption-side: top; text-align: center;">              Subscription Details            </caption>          <tr class="firstrow">            <th style="text-align: center;">Subscription type</th>            <th style="text-align: center;">Start Date</th>            <th style="text-align: center;">End Date</th>          </tr>          <tr style="text-align: center;" class="evenrow">            <td>Organiser Ecopy</td>            <td class="tdbreak">%orgStart%</td>            <td>%orgEnd%</td>          </tr>          <tr style="text-align: center;" class="oddrow">            <td>Panchjanya Ecopy</td>            <td>%panchStart%</td>            <td>%panchEnd%</td>          </tr>';
 
                         var newhtml = disp.replace('%username%',data['user']['username']);
                         var newhtml1 = disp1.replace('%phone%',data['user']['phone']);
