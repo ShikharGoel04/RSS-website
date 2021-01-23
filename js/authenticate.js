@@ -112,8 +112,9 @@ hideButton();
 		{
 		// const token=btoa(responseJson.access_token);
 		//  console.log(token);
+		document.getElementById("loading").style.display='block';
 		 window.localStorage.setItem("access_token", responseJson.access_token);
-		 document.getElementById("loading").style.display='block';
+		 
 		// loginShow();
 
 
