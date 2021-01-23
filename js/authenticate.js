@@ -5,7 +5,6 @@ function loginShow()
     {
 		document.getElementById("login").style.display='block';
         document.getElementById("logout").style.display='none';
-
 	}
 	else if(localStorage.getItem("access_token"))
     {
@@ -14,7 +13,9 @@ function loginShow()
     }
  
 }
-
+function hideLoader() {
+    $('#loading').hide();
+}
 function showButton(){
 	document.getElementById("button").style.display='block';
 	document.getElementById("otp1").style.display='block';
@@ -113,7 +114,7 @@ hideButton();
 		//  console.log(token);
 		 window.localStorage.setItem("access_token", responseJson.access_token);
 		 document.getElementById("loading").style.display='block';
-		loginShow();
+		// loginShow();
 
 
 
@@ -135,11 +136,11 @@ hideButton();
 						   if(orgSub || panSub)
 						   {
 							window.localStorage.setItem("magsub",1);
-							window.location="index.html";
+							window.location="news.html";
 						   }
 						   else{
 							 window.localStorage.setItem("magsub",0);
-							 window.location="index.html";
+							 window.location="news.html";
 						   }
 
 			   
@@ -212,10 +213,9 @@ hideButton();
 		
 		
 	}
-
 	function news()
 	{
-		var access_token=localStorage.getItem("access_token");
+		
 		if(access_token)
 		{
 			window.location="news.html";
@@ -246,8 +246,7 @@ hideButton();
 		 localStorage.clear();
 		
 		 window.location="index.html";
-		 loginShow();
-		//  window.localStorage.setItem("loginShow","true");
+		//  loginShow();
 		 
 	}
 
