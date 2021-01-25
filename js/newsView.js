@@ -23,7 +23,7 @@ else if(localStorage.getItem("index"))
     $(document).ready(function(){
         var bearer = "Bearer " + localStorage.getItem("access_token");
         var b=baseUrl();
-           fetch(b+'news/getNews?format=json',{
+           fetch(b+'news/getOrganizerNews?format=json',{
                method: 'GET',
                headers:{
                    Authorization:bearer
