@@ -19,7 +19,7 @@ window.onload=function(){
 		$(document).ready(function(){
          var bearer = "Bearer " + localStorage.getItem("access_token");
          var b=baseUrl();
-            fetch(b+'videos/getVideos',{
+            fetch(b+'videos/getOrganizerVideos',{
                 method: 'GET',
                 headers:{
                     Authorization:bearer
