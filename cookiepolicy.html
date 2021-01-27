@@ -4,10 +4,11 @@
   <title>organiser</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="./js/authenticate.js"></script>
-  <script src="./js/video.js"></script>
+  <script src="./js/number.js"></script>
   <script src="./js/baseUrl.js"></script>
+  <script src="./js/authenticate.js"></script>
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/newloader.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -16,44 +17,77 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/loader.css">
-<link rel="stylesheet" href="./css/newloader.css">
+ 
 
   <style>
-            .responsive {
+
+    .responsive {
   width: 100%;
 }
-    @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .resp {
     width: 100%;
+  }
+  .tablewidth{
+    width: 92% !important;
+    margin: auto;
+  }
+  .tdbreak{
+padding-left: 10px;
+padding-right: 10px;
   }
 }
     .navbar{
       background-color: #1A322B !important;
       
     }
-    .content{
-    font-family: 'Bitter', serif;
-    font-size: 1.5rem;
-    text-align: justify;
+    .firstrow{
+      background-color: #EFEFEF;
+      color:#ED6206;
+      height: 50px;
+    }
+   .content{
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.7rem;
    }
-   .fontt{
-    font-family: 'Abril Fatface', cursive;
-    font-size: 3rem;
-  }
-    .responsive {
-  width: 100%;
-}
-
+   .subimg{
+     height: 170px;
+    width: 170px;
+    border: 3px solid #ed6206;
+    display: block;
+    margin: auto;
+   }
   .body
   {
     padding-right: 0px;
   }
+  .evenrow{
+    background-color: #E4E4E4;
+    height: 50px;
+    color:#7D7D7D;
+  }
+  .oddrow
+  {
+    background-color: #EFEFEF;
+    height: 50px;
+    color:#7D7D7D;
+  }
+  .fontt{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 2rem;
 
+    color: #191816;
+  }
+.subscribe{
+  background-color: #ed6206;
+  font-size: 2.5rem;
+ color: white;
+}
   </style>
 </head>
 <body style="padding-right: 0px;">
@@ -69,9 +103,9 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link btn" onclick="subscription()" ><i class="fas fa-user-circle"></i> SUBCRIPTION</a>
-      </li>   
+        <li class="nav-item">
+            <a class="nav-link btn" onclick="subscription()" ><i class="fas fa-user-circle"></i> SUBCRIPTION</a>
+          </li>   
       <li class="nav-item">
         <a class="nav-link btn" onclick="news()"><i class="far fa-newspaper"> </i> NEWS</a>
       </li>
@@ -83,9 +117,10 @@
       </li>   
        
     </ul>
-  </div>  
+
+  </div> 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul style="float:right;" class="nav navbar-nav topnav-right" >
+    <ul style="float:right;" style="float:right" class="nav navbar-nav topnav-right" >
       <li class="nav-item">
       <!-- <a id="login" data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn" onclick="number()" style="margin-right: 10px;margin-left: 15px;">Login</a> -->
       <a id="logout"  class="nav-link btn-mag btn" onclick="logout()" style="margin-right: 10px;margin-left: 15px;">Logout</a>
@@ -98,18 +133,49 @@
       </li>
     </ul>  -->
 </nav>
-<!-- loader -->
-<div id="loading"></div>
 
-<!-- <div class="loader-wrapper" id="loader">
-  <span class="loader" style="
-margin-top: 35%;
-margin-left: 50%;    height: 31px;
-width: 31px;"><span class="loader-inner"></span></span>
+<!-- loader -->
+
+
+<div id="loading">
+  
+</div>
+
+<!-- loader -->
+
+<!-- <div class="modal-content none">
+  <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+ Modal content-->
+<!-- <div class="modal-content">
+ <div class="modal-header">
+   <h4 class="modal-title">Login </h4>
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div> --> 
+ 
+<!-- <div class="modal-body">
+   <div class="form-row">
+     <div class="form-group col-sm-6">
+    <label class="sr-only" for="exampleInputEmail3">Phone Number</label>
+   <input type="text" id="phone" class="form-control form-control-sm mr-1" placeholder="enter phone number" >
+     </div>
+     <div class="form-group col-sm-4">
+       <label class="sr-only" for="exampleInputEmail3">Enter OTP</label>
+   <input type="text" id="otp1" class="form-control form-control-sm mr-1" placeholder="enter OTP">
+ </div>
+ </div>
+ <div class="form-row">
+   <button type="button" class="btn btn-primary btn-sm ml-1" onclick="authenticate()" id="otp">Get otp</button>
+   <button type="button" class="btn btn-primary btn-sm ml-1" id="button" onclick="otp()">Login</button>
+   </div>
+ <div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ </div>
+</div>
+</div>
+</div>
+</div>
 </div> -->
-
-<!-- loader -->
-
  <!-- <div class="modal-content none">
          <div class="modal fade" id="myModal" role="dialog">
              <div class="modal-dialog">
@@ -144,21 +210,56 @@ width: 31px;"><span class="loader-inner"></span></span>
     </div>
   </div> -->
 
-
-<div class="container" style="margin-top:30px">
-  
-    
+<div class="container">
+    <h1>Cookie Policy</h1>
+    <div>
+        This is the Cookie Policy for Organiser, Voice of The Nation, accessible from https://www.organiser.org
  
-      <div class="vid-add card">
-        
-       
-      </div>
-     
-       
+What Are Cookies
+
+As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or 'break' certain elements of the sites functionality.
+
+How We Use Cookies
+
+We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use.
+
+Disabling Cookies
+
+You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies.
+
+The Cookies We Set
+
+Email newsletters related cookies
+
+This site offers newsletter or email subscription services and cookies may be used to remember if you are already registered and whether to show certain notifications which might only be valid to subscribed/unsubscribed users.
+
+Site preferences cookies
+
+In order to provide you with a great experience on this site we provide the functionality to set your preferences for how this site runs when you use it. In order to remember your preferences we need to set cookies so that this information can be called whenever you interact with a page is affected by your preferences.
+
+Third Party Cookies
+
+In some special cases we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.
+
+This site uses Google Analytics which is one of the most widespread and trusted analytics solution on the web for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.
+
+For more information on Google Analytics cookies, see the official Google Analytics page.
+
+We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including; {List the social networks whose features you have integrated with your site?:12}, will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.
+
+More Information
+
+Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site. 
+
+However if you are still looking for more information then you can contact us through one of our preferred contact methods:
+
+By visiting this link: www.organiser.org
+By sending us email: contact@organiser.org
     </div>
+</div>
   
 
-
+<hr>
 <!-- footer -->
 <footer class="footer">
   <div class="container">
@@ -202,7 +303,7 @@ Organiser - Voice of the nation. The oldest and most widely circulated nationali
 </footer>
 <!-- footer -->
 <script>
-  setTimeout(hideLoader,2500);
+    setTimeout(hideLoader,2500);
 </script>
 </body>
 </html>
