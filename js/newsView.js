@@ -1,3 +1,6 @@
+function hideLoader() {
+    $('#loading').hide();
+}
 function formatDate (input) {
     var trimmedString=input.substring(0,10);
     var datePart = trimmedString.split("-",3),
@@ -6,11 +9,6 @@ function formatDate (input) {
      day = datePart[2];
     return day+'/'+month+'/'+year;
   }
-
-  function hideLoader() {
-    $('#loading').hide();
-}
-
 window.onload=function(){
 if(localStorage.getItem("index") === null)
 {
@@ -23,13 +21,19 @@ else if(localStorage.getItem("index"))
     $(document).ready(function(){
         var bearer = "Bearer " + localStorage.getItem("access_token");
         var b=baseUrl();
-           fetch(b+'news/getOrganizerNews?format=json',{
-               method: 'GET',
-               headers:{
-                   Authorization:bearer
-               }
-         
-       })
+        var category=localStorage.getItem("newscategory");
+        fetch(b+'news/getNewsbyCategory',{
+            method: 'POST',
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                Authorization:bearer
+            },body: JSON.stringify({
+                category:category,
+                client:"Organizer"
+            })
+      
+    })
         .then((response) => response.json())
         .then((data) => {
            
@@ -43,7 +47,7 @@ else if(localStorage.getItem("index"))
             newhtml=newhtml.replace('%imgsrc%',data['news'][i]['image']);
             newhtml=newhtml.replace('%data%',data);
             var dateConvert=formatDate(data['news'][i]['date']);
-            newhtml = newhtml.replace('%date%',dateConvert);
+                newhtml = newhtml.replace('%date%',dateConvert);
             newhtml = newhtml.replace('%author%',data['news'][i]['author']);
             document.querySelector('.news-a').insertAdjacentHTML('beforeend' , newhtml);
            

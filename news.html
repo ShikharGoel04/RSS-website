@@ -39,14 +39,39 @@
     width: 100%;
   }
 }
+@media screen and (min-width: 0px) and (max-width: 935px) {
+  .mobile { display: block; }  /* show it on small screens */
+  #computer { display: none;}
+}
+
+@media screen and (min-width: 935px) {
+  .mobile { display: none; }   /* hide it elsewhere */
+  #computer { display: block;}
+}
+
     .navbar{
       background-color: #1A322B !important;
       
+    }
+    .button1{
+      background-color:#c5c3c3; 
+      width:100%; 
+      color:white; 
+      font-weight: 600;
     }
    .content{
     font-family: 'Baloo 2', cursive;
     font-size: 1.7rem;
     text-align: justify;
+   }
+   .category1{
+     background-color: orange;
+     width: 60%;
+     margin: auto;
+     
+    font-size: 2rem;
+    font-weight: 600;
+    color: white !important;
    }
   .body
   {
@@ -58,6 +83,9 @@
     color: #191816;
 
   }
+  .rc {
+  border-radius: 25px;
+}
   </style>
 </head>
 <body style="padding-right: 0px;">
@@ -181,16 +209,59 @@
   </div> -->
 
 
-<div class="container" style="margin-top:30px">
-  
-    
+  <a id="category" data-toggle="modal"  data-target="#myModal" class="nav-link btn-mag btn mobile category1" >Categories</a>
  
-      <div class="news-add">
-        
-       
-      </div>
-       
+
+
+
+  <div class="modal-content none mobile" style="border: none;">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+ <div class="modal-content">
+   <div class="modal-header">
+     <h3 class="modal-title">Categories</h3>
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+ </div>
+   
+ <div class="modal-body">
+  <div class="content2">
+  </div>
+  
+
+     </div>
+   <div class="modal-footer">
+   
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   </div>
+ </div>
+
 </div>
+</div>
+</div>
+
+
+<!-- dropdown mobile view -->
+<!-- dropdown mobile view -->
+
+
+ <div class="row m-1 justify-content-between">
+   <div class="col-sm-2 mx-2" id="computer">
+     <h1 class="font-weight-bold" style="font-size: 3rem;text-align: center; font-family: 'Poppins';">
+       Categories
+     </h1>
+     <div class="content3">
+
+     </div>
+
+   </div>
+   <div class="col-sm-9 news-add ml-4">
+
+   </div>
+ </div>
+
+
+
+
   
 
 <hr>
