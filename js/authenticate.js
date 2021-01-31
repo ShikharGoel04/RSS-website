@@ -76,7 +76,6 @@ function authenticate()
  .catch((error) => {
      console.log("reset client error-------",error);
 });
-// showButton();
 $( "#button" ).fadeIn( 2000, function() {
 });
 $( "#otp1" ).fadeIn( 2000, function() {
@@ -109,15 +108,28 @@ hideButton();
 	  }),
 	   credentials: "same-origin"
 	})
-	 .then((response) => response.json())
+	 .then((response) => {status=response.status; return(response.json());})
 	 .then((responseJson) => {
 		console.log(responseJson.access_token);
-		if(responseJson.access_token)
+		if(status==403)
+		{
+			alert("Enter correct OTP");
+
+		}
+		else
+		{
+			if(responseJson.access_token)
 		{
 		// const token=btoa(responseJson.access_token);
 		//  console.log(token);
 		document.getElementById("loading").style.display='block';
 		 window.localStorage.setItem("access_token", responseJson.access_token);
+		 window.localStorage.setItem("refreshtoken",responseJson.refreshtoken);
+		 window.localStorage.setItem("newscategory","All" );
+		
+
+
+
 		 
 		// loginShow();
 
@@ -154,21 +166,11 @@ hideButton();
 				   console.log("reset client error-------",error);
 			  });
 
-
-
-
-
-		/* have to fetch profile api here and store it on local storage   */
-
-		 
 		}
-		else
-		{
-			alert("Enter correct OTP");
-		}
-
-		 
-		})
+		
+	}
+	
+	})
 	 .catch((error) => {
 		 console.log("reset client error-------",error);
 		 alert("Enter correct OTP");

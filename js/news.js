@@ -25,7 +25,12 @@ function newsDisp(){
         else if(localStorage.getItem("access_token"))
         {
             $(document).ready(function(){
+                if(localStorage.getItem("start")===null)
+                {
+                    window.localStorage.setItem("start",0);
+                }
                  
+              const start=parseInt(localStorage.getItem("start"));
               
              var bearer = "Bearer " + localStorage.getItem("access_token");
              var refreshtoken=localStorage.getItem("refreshtoken");
@@ -40,12 +45,40 @@ function newsDisp(){
                         Authorization:bearer
                     },body: JSON.stringify({
                         category:category,
-                        client:"Organizer"
+                        client:"Organizer",
+                        start:start
                     })
               
             })
              .then( (response) =>  {status=response.status; return(response.json());})
              .then((data) => {
+                
+                 const count=parseInt(data["count"]);
+                 const next=parseInt(data["next"]);
+                 if((next<count)&&(next>=8))
+                 {
+                    document.getElementById("next").style.display='block';
+                    document.getElementById("previous").style.display='block';
+                    
+                 }
+                 else if((count<=next) && (next>=8))
+                 {
+                    document.getElementById("next").style.display='none';
+                    document.getElementById("previous").style.display='block';
+                    
+                 }
+                 else if((next<count)&&(next<8))
+                 {
+                    document.getElementById("next").style.display='block';
+                    document.getElementById("previous").style.display='none';
+                  
+                 }
+                 else if((count<=next) && (next<8))
+                 {
+                    document.getElementById("next").style.display='none';
+                    document.getElementById("previous").style.display='none';
+                    
+                 }
                  console.log(status);
                  if(status==403)
                  {
@@ -130,6 +163,7 @@ function newsDisp(){
         function category(idd)
         {
                 window.localStorage.setItem("active",idd.id);
+                window.localStorage.setItem("start",0);
                 window.localStorage.setItem("newscategory",idd.innerText);
                 window.location="news.html";
         }
@@ -139,7 +173,7 @@ function newsDisp(){
         {
             var b=baseUrl();
             var totalCat=0;
-            fetch(b+'news/getCategories',{
+            fetch(b+'category/getCategories',{
                 method: 'GET',
                 headers:{
                     'Accept':'application/json',
@@ -151,33 +185,62 @@ function newsDisp(){
          .then( (response) => response.json())
          .then((data) => {
             var newscategory=localStorage.getItem("newscategory");
-           
+            var allid1;
+            var allid2;
           
             for(const j in data['categories'])
             {
                
                 var disp1;
                 var disp2;
-                console.log(data['categories'][j]['category']);
-                if(data['categories'][j]['category']!=null)
+                var disp3;
+               
+               
+                console.log(data['categories'][j]['categoryName']);
+                if(data['categories'][j]['categoryName']=="All")
                 {
-                    disp2='<button class="btn btn-lg my-2 button1" id=%id% value=%category1% onclick="category(%idd%)">%category% </button>';
-                    disp1='<button class="btn btn-lg my-2 button1" style="width:80%;" id=%id% value=%category1% onclick="category(%idd%)">%category% </button>';
-                    var newhtml5 = disp1.replace('%id%','check'+totalCat);
-                    var newhtml5 = newhtml5.replace('%idd%','check'+totalCat);
-                    var newhtml5 = newhtml5.replace('%category1%',data['categories'][j]['category']);
-                    var newhtml5 = newhtml5.replace('%category%',data['categories'][j]['category']);
-                    var newhtml6 = disp2.replace('%id%','check'+totalCat+1);
-                    var newhtml6 = newhtml6.replace('%idd%','check'+totalCat+1);
-                    var newhtml6 = newhtml6.replace('%category1%',data['categories'][j]['category']);
-                    var newhtml6 = newhtml6.replace('%category%',data['categories'][j]['category']);
-                    // console.log(newhtml5);
-                    // console.log(newhtml6);
-
+                    disp3='<button class="btn btn-lg my-2 button1" id=%id% value=%category1% onclick="category(%idd%)">%category% </button>'; 
+                    disp4='<button class="btn btn-lg my-2 button1" style="width:80%;" id=%id% value=%category1% onclick="category(%idd%)">%category% </button>'; 
+                    var newhtml7 = disp3.replace('%id%','check'+totalCat+1);
+                    var newhtml7 = newhtml7.replace('%idd%','check'+totalCat+1);
+                    var newhtml7 = newhtml7.replace('%category1%',data['categories'][j]['categoryName']);
+                    var newhtml7 = newhtml7.replace('%category%',data['categories'][j]['categoryName']);
+                    var newhtml8 = disp4.replace('%id%','check'+totalCat);
+                    var newhtml8 = newhtml8.replace('%idd%','check'+totalCat);
+                    var newhtml8 = newhtml8.replace('%category1%',data['categories'][j]['categoryName']);
+                    var newhtml8 = newhtml8.replace('%category%',data['categories'][j]['categoryName']);
+                    allid1='check'+totalCat+1;
+                    allid2='check'+totalCat;
+                    document.querySelector('.content4').insertAdjacentHTML('beforeend' , newhtml7);
+                    document.querySelector('.content5').insertAdjacentHTML('beforeend' , newhtml8);
                     totalCat++;
-                    document.querySelector('.content2').insertAdjacentHTML('beforeend' , newhtml5);
-                    document.querySelector('.content3').insertAdjacentHTML('beforeend' , newhtml6);
                 }
+                else
+                {
+                if(data['categories'][j]['categoryName']!=null)
+                {
+                    if(data['categories'][j]["is_Organizer"]==true)
+                    {
+                        disp2='<button class="btn btn-lg my-2 button1" id=%id% value=%category1% onclick="category(%idd%)">%category% </button>';
+                        disp1='<button class="btn btn-lg my-2 button1" style="width:80%;" id=%id% value=%category1% onclick="category(%idd%)">%category% </button>';
+                        var newhtml5 = disp1.replace('%id%','check'+totalCat);
+                        var newhtml5 = newhtml5.replace('%idd%','check'+totalCat);
+                        var newhtml5 = newhtml5.replace('%category1%',data['categories'][j]['categoryName']);
+                        var newhtml5 = newhtml5.replace('%category%',data['categories'][j]['categoryName']);
+                        var newhtml6 = disp2.replace('%id%','check'+totalCat+1);
+                        var newhtml6 = newhtml6.replace('%idd%','check'+totalCat+1);
+                        var newhtml6 = newhtml6.replace('%category1%',data['categories'][j]['categoryName']);
+                        var newhtml6 = newhtml6.replace('%category%',data['categories'][j]['categoryName']);
+                        // console.log(newhtml5);
+                        // console.log(newhtml6);
+    
+                        totalCat++;
+                        document.querySelector('.content2').insertAdjacentHTML('beforeend' , newhtml5);
+                        document.querySelector('.content3').insertAdjacentHTML('beforeend' , newhtml6);
+                    }
+
+                }
+            }
            
          }
         //  if(newscategory=== null)
@@ -187,9 +250,18 @@ function newsDisp(){
         //      window.location("news.html");
              
         //  }
-         var active=localStorage.getItem("active");
-         document.getElementById(active).style.backgroundColor="orange";
-         window.localStorage.setItem("totalCat",totalCat);
+         if(localStorage.getItem("newscategory")=="All")
+         {
+            document.getElementById(allid1).style.backgroundColor="#ED6206";
+            document.getElementById(allid2).style.backgroundColor="#ED6206";
+         }
+         else
+         {
+            var active=localStorage.getItem("active");
+            document.getElementById(active).style.backgroundColor="#ED6206";
+            ;
+            window.localStorage.setItem("totalCat",totalCat);
+         }
          
         })
          .catch((error) => {
@@ -201,6 +273,19 @@ function newsDisp(){
     
 
             
+        }
+        function next()
+        {
+            window.localStorage.setItem("start",parseInt(localStorage.getItem("start"))+4);
+
+        }
+      
+
+        function previous()
+        {
+
+            var start=localStorage.getItem("start");
+            window.localStorage.setItem("start",parseInt(start)-8);
         }
 
       
