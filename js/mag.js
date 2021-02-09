@@ -128,7 +128,7 @@ window.onload=function(){
     function previewFile()
 
     {
-        var adobeDCView = new AdobeDC.View({clientId: "e7e07ed1739446638a1536a1cb32ea1f", divId: "adobe-dc-view"});
+        var adobeDCView = new AdobeDC.View({clientId: "ba13668e6c4c43998b5029f86bcdfccb", divId: "adobe-dc-view"});
         adobeDCView.previewFile({
             content:{location: {url: data1}},
             metaData:{fileName: "E-Magazine"}
