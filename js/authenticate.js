@@ -43,7 +43,7 @@ function authenticate()
 		alert("Enter valid 10 digit phone number");	
 	}
 	else
-	{	
+	{	document.getElementById("country").disabled=true;
 		var p=document.getElementById("country").value;
 		var pho=p.concat(ph);
 		console.log(pho);

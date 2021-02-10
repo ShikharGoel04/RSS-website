@@ -58,6 +58,7 @@
   }
   .navbar{
       background-color: #1A322B !important;
+      margin-bottom: 3px;
       
     }
     .fontt{
@@ -167,6 +168,12 @@ width: 31px;"><span class="loader-inner"></span></span>
             <div class="bordertop">
                 <div class="form-row justify-content-center mt-3">
 
+
+                  <style>
+                    select #country :disabled{
+                      background-color: #ED6206 !important;
+                    }
+                  </style>
                   <div class="form-group col-sm-9 mt-2 mb-4" style="width: 80%;">
                     <label class="content">Select Country</label>
                     <select id="country" class="form-select form-select-lg content" onmousedown="if(this.options.length>6){this.size=6;}" onchange="this.size=0;" onblur="this.size=0;" style="position: absolute"  aria-label="Default select example">
