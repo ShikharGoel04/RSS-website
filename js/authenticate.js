@@ -27,6 +27,7 @@ function showButton(){
   }
 function authenticate()
 {
+	
 	       
 		var b=baseUrl();
 		console.log(b);
@@ -43,7 +44,7 @@ function authenticate()
 	}
 	else
 	{	
-		var p='91';
+		var p=document.getElementById("country").value;
 		var pho=p.concat(ph);
 		console.log(pho);
 		// p=p+'9';
@@ -92,7 +93,8 @@ hideButton();
 		var phone=document.getElementById("phone");
 		
 		var status;
-		var p='91';
+		var p=document.getElementById("country").value;
+		
 		var pho=p.concat(phone.value);
 		console.log(pho);
 		//e.preventDefault();
