@@ -77,10 +77,11 @@ function authenticate()
  .catch((error) => {
      console.log("reset client error-------",error);
 });
-$( "#button" ).fadeIn( 2000, function() {
+
+
+$( "#hide" ).fadeIn( 1000, function() {
 });
-$( "#otp1" ).fadeIn( 2000, function() {
-});
+document.getElementById("boom").style.display="none";
 hideButton();
 }	
 	}
