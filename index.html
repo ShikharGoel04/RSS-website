@@ -31,6 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+  
   <script>
     window.onload = function () {
       var access_token = localStorage.getItem("access_token");
@@ -112,6 +113,16 @@
       bottom: 0px;
       position: relative;
     }
+    @media screen and (min-width: 1024.9px) {
+      .comp {
+        display:none;
+      }
+}
+@media screen and (max-width: 1025px) {
+      .mob {
+        display: none;
+      }
+}
 
     select.form-select.form-select-lg {
       /* background: center; */
@@ -155,7 +166,7 @@
 
 <!-- navbar -->
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark mob">
     <div class="navbar-header">
       <a class="navbar-brand" style="padding-top: 10px;" href="index.html"><img style="height: 50px;"
           src="./images/org.svg"></a>
@@ -169,11 +180,58 @@
 
   </div>
   <!-- loader -->
+<!-- temporary -->
+<style>
+  
+  .container1 {
+  position: relative;
+  width: 100%;
+}
+
+.container1 img {
+  width: 100%;
+  height: auto;
+}
+
+.container1 .btn1 {
+  position: absolute;
+  left: 33%;
+  right:33%;
+  width: 34%;
+top: 84.93%;
+bottom: 9.35%;
+}
+/* .container1 .btn2 {
+  position: absolute;
+  width: 26%;
+right: 16%;
+top: 84.84%;
+bottom: 9.32%;
+background-color: white;
+
+} */
+</style>
+
+<!-- phone view -->
+<div class="container1 comp">
+  <img  src="./images/play.svg" alt="Snow" style="width:100%">
+  <a class="btn btn-lg btn1 rounded p-0 shadow" href="https://play.google.com/store/apps/details?id=org.organiser.organiser&hl=en_IN&gl=US">
+    <img class="rounded" src="./images/Vector1.svg">
+  </a>
+  <!-- <button class=" btn btn-lg btn2  p-0 shadow">
+    <img src="./images/apple.png">
+  </button> -->
+  <script>
+    setTimeout(hideLoader,1000);
+</script>
+</div>
+
 
 
 <!-- content -->
 
-  <div class="container" style="margin-top:15px">
+
+  <div class="container mob" style="margin-top:15px">
     <div class="row justify-content-center">
       <div class="col-sm-4 mt-5" id="boom">
         <div class="fontt">
@@ -454,7 +512,7 @@
   </div>
 
 
-  <div class="hsds mb-3" style="width: 200px; margin: auto; text-align: center; margin-top: 40px;">
+  <div class="hsds mb-3 mob" style="width: 200px; margin: auto; text-align: center; margin-top: 40px;">
     <h6 class="mb-1" style="font-size: 0.9rem;">Developed By</h6>
     <img src="./images/chidiya.svg" height="40px" width="40px">
     <h5 class="mb-0 mt-1" style="font-size: 0.8rem; font-weight: 600;">Humming Sparrow</h5>
@@ -464,7 +522,7 @@
 
 
   <!-- footer -->
-  <footer class="footer">
+  <footer class="footer mob">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-4 text-center">
