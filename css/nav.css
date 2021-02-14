@@ -1,9 +1,9 @@
 .navimg{
     height:15px;
-    margin-left: 0.24rem;
 }
 .navtext{
     vertical-align: text-top;
+    margin-left: 0.24rem;
 }
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
