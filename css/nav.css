@@ -1,0 +1,14 @@
+.navimg{
+    height:15px;
+}
+.navtext{
+    vertical-align: text-top;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color:inherit;
+}
+.navbar{
+    background-color: #1A322B !important;
+    
+  }
