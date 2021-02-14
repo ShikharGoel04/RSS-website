@@ -12,7 +12,7 @@ function hideLoader() {
     $('#loading').hide();
 }
 function newsDisp(){
-    // document.getElementById("loader").style.display='block';
+
 
     
     var b=baseUrl();
