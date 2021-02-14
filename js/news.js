@@ -259,6 +259,7 @@ function newsDisp(){
          {
             var active=localStorage.getItem("active");
             document.getElementById(active).style.backgroundColor="#ED6206";
+            document.getElementById(active).style.color="#fff";
             ;
             window.localStorage.setItem("totalCat",totalCat);
          }
