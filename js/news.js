@@ -254,6 +254,7 @@ function newsDisp(){
          {
             document.getElementById(allid1).style.backgroundColor="#ED6206";
             document.getElementById(allid2).style.backgroundColor="#ED6206";
+            document.getElementById(allid1).style.color="#fff";
          }
          else
          {
