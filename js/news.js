@@ -255,12 +255,14 @@ function newsDisp(){
             document.getElementById(allid1).style.backgroundColor="#ED6206";
             document.getElementById(allid2).style.backgroundColor="#ED6206";
             document.getElementById(allid1).style.color="#fff";
+            document.getElementById(allid1).style.boxShadow="none";
          }
          else
          {
             var active=localStorage.getItem("active");
             document.getElementById(active).style.backgroundColor="#ED6206";
             document.getElementById(active).style.color="#fff";
+            document.getElementById(active).style.boxShadow="none";
             ;
             window.localStorage.setItem("totalCat",totalCat);
          }
