@@ -24,6 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/08e3572502.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/tw.css">
+  <script src="./js/tw.js"></script>
   <script>
     window.onload = function () {
       newsDisp();
@@ -303,6 +305,29 @@
 
     </div>
   </div>
+
+
+
+  <!-- twitter ball -->
+  <div>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+
+    <div class="feed_icon shadow-lg twitt bounce2" id="tw" onclick="tw()">
+      <i class="fa fa-twitter"></i>
+    </div>
+
+    <div class="feed_close shadow close" style="right: 350px; display: none;" onclick="closee()">
+      <i class="fa fa-times"></i>
+    </div>
+ 
+    <div class="feed_container shadow-lg yes" style="right: 0px; display: none;" >
+      <div>
+        <a class="twitter-timeline" href="https://twitter.com/eOrganiser?ref_src=twsrc%5Etfw">Tweets by eOrganiser</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+
+
+  <!-- twitter ball -->
 
 
   <!-- pagination -->
