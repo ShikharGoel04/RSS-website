@@ -28,6 +28,7 @@ function newsDisp(){
                 if(localStorage.getItem("start")===null)
                 {
                     window.localStorage.setItem("start",0);
+                    window.localStorage.setItem("curr",1);
                 }
                  
               const start=parseInt(localStorage.getItem("start"));

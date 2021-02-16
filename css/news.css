@@ -84,3 +84,7 @@
     background-color: #f7f7f7;
     color: #616161;
   }
+  .page-item a{
+    font-size: 1.75rem;
+    height: 100% !important;
+  }

@@ -6,8 +6,9 @@ function pagination(count)
     if(tpages<=5)
     {
         var i;
-        
         var disp;
+        var disp1='      <li class="page-item">        <a id="previous" onclick="previous()" class="page-link pagination1" href="news.html" aria-label="Previous">          <span aria-hidden="true">&laquo;</span>          <span class="sr-only">Previous</span>        </a>      </li>';
+        document.querySelector('.page').insertAdjacentHTML("beforeend",disp1);
         for(i=1;i<=tpages;i++)
         {
             disp='<li class="page-item"><a class="page-link" id=%idd% onclick="pageNumber(%page1%)" href="news.html">%page%</a></li>';
@@ -16,6 +17,8 @@ function pagination(count)
             var html2=html1.replace('%idd%',i);
             document.querySelector('.page').insertAdjacentHTML("beforeend",html2);
         }
+        var disp2='      <li class="page-item">        <a id="next" onclick="next()" class="page-link pagination1" href="news.html" aria-label="Next">          <span aria-hidden="true">&raquo;</span>          <span class="sr-only">Next</span>        </a>      </li>';
+        document.querySelector('.page').insertAdjacentHTML("beforeend",disp2);
         if(tpages>=1)
         {
             active1(curr);
@@ -28,6 +31,8 @@ function pagination(count)
         
         if(curr<=3)
         {
+            var disp1='      <li class="page-item">        <a id="previous" onclick="previous()" class="page-link pagination1" href="news.html" aria-label="Previous">          <span aria-hidden="true">&laquo;</span>          <span class="sr-only">Previous</span>        </a>      </li>';
+            document.querySelector('.page').insertAdjacentHTML("beforeend",disp1);
             for(i=1;i<=5;i++)
             {
                 disp='<li class="page-item"><a class="page-link" id=%idd% onclick="pageNumber(%page1%)" href="news.html">%page%</a></li>';
@@ -36,12 +41,16 @@ function pagination(count)
                var html2=html1.replace('%idd%',i);
                document.querySelector('.page').insertAdjacentHTML("beforeend",html2);
             }
+            var disp2='      <li class="page-item">        <a id="next" onclick="next()" class="page-link pagination1" href="news.html" aria-label="Next">          <span aria-hidden="true">&raquo;</span>          <span class="sr-only">Next</span>        </a>      </li>';
+            document.querySelector('.page').insertAdjacentHTML("beforeend",disp2);
             active1(curr);
             
         }
         else if((tpages-curr)<2)
         {
             var j=tpages-4;
+            var disp1='      <li class="page-item">        <a id="previous" onclick="previous()" class="page-link pagination1" href="news.html" aria-label="Previous">          <span aria-hidden="true">&laquo;</span>          <span class="sr-only">Previous</span>        </a>      </li>';
+            document.querySelector('.page').insertAdjacentHTML("beforeend",disp1);
             for(j;j<=tpages;j++)
             {
                 disp='<li class="page-item"><a class="page-link" id=%idd% onclick="pageNumber(%page1%)" href="news.html">%page%</a></li>';
@@ -50,6 +59,8 @@ function pagination(count)
                 var html2=html1.replace('%idd%',j);
                 document.querySelector('.page').insertAdjacentHTML("beforeend",html2);
             }
+            var disp2='      <li class="page-item">        <a id="next" onclick="next()" class="page-link pagination1" href="news.html" aria-label="Next">          <span aria-hidden="true">&raquo;</span>          <span class="sr-only">Next</span>        </a>      </li>';
+            document.querySelector('.page').insertAdjacentHTML("beforeend",disp2);
             active1(curr);
         }
         else{
@@ -59,6 +70,8 @@ function pagination(count)
             console.log(curr);
             var end1=parseInt(curr)+2;
             console.log(end1);
+            var disp1='      <li class="page-item">        <a id="previous" onclick="previous()" class="page-link pagination1" href="news.html" aria-label="Previous">          <span aria-hidden="true">&laquo;</span>          <span class="sr-only">Previous</span>        </a>      </li>';
+            document.querySelector('.page').insertAdjacentHTML("beforeend",disp1);
             for(initial;initial<=end1;initial++)
             {
                 disp='<li class="page-item"><a class="page-link" id=%idd% onclick="pageNumber(%page1%)" href="news.html">%page%</a></li>';
@@ -67,6 +80,8 @@ function pagination(count)
                 var html2=html1.replace('%idd%',initial);
                 document.querySelector('.page').insertAdjacentHTML("beforeend",html2);
             }
+            var disp2='      <li class="page-item">        <a id="next" onclick="next()" class="page-link pagination1" href="news.html" aria-label="Next">          <span aria-hidden="true">&raquo;</span>          <span class="sr-only">Next</span>        </a>      </li>';
+            document.querySelector('.page').insertAdjacentHTML("beforeend",disp2);
             active1(curr);
         }
 
